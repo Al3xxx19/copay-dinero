@@ -3546,6 +3546,10 @@ msgstr "Votre portefeuille n’est jamais enregistré en dehors de votre apparei
 msgid "Your wallet key will be encrypted. The Spending Password cannot be recovered. Be sure to write it down."
 msgstr "La clé de votre portefeuille sera chiffrée. Le code de dépenses ne peut pas être récupéré. N'oubliez pas de l'écrire."
 
+#: src/js/services/profileService.js:533
+msgid "Please enter a password to encrypt your wallet keys on this device storage"
+msgstr "Merci d'écrire le mot de passe pour chiffrer la clé de portefeuille sur le stockage de cet appareil"
+
 #: www/views/includes/walletList.html:13
 #: www/views/includes/walletSelector.html:30
 #: www/views/includes/walletSelector.html:61
