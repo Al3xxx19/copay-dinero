@@ -11,16 +11,16 @@ angular.module('copayApp.controllers').controller('buyandsellController', functi
     $scope.services = [
 
       {
-        url : 'https://www.cryptopia.co.nz/Exchange/?market=DIN_BTC',
-        caption : 'Cryptopia'
+        url : 'https://www.southxchange.com/Market/Book/DIN/BTC',
+        caption : 'Southxchange'
       },
 	  {
-		url : 'https://www.coinexchange.io/market/DIN/BTC',
-		caption : 'coinExchange'
+		url : 'https://stocks.exchange/trade/DIN/BTC',
+		caption : 'Stocks exchange'
 	  },
       {
-        url : 'https://wallet.crypto-bridge.org/market/BRIDGE.DIN_BRIDGE.BTC',
-        caption : 'CryptoBridge'
+        url : 'https://graviex.net/markets/dinbtc',
+        caption : 'Graviex'
       },
     ]
   });
