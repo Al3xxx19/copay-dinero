@@ -38,7 +38,7 @@ angular.module('copayApp.controllers').controller('tourController',
           $scope.localCurrencySymbol = '$';
           $scope.localCurrencyPerDin = $filter('formatFiatAmount')(parseFloat(parseFloat(value_object['price_usd']).toFixed(4), 10));*/
 		  $http.get('https://www.southxchange.com/api/prices').then(function (response) {
-			var value_object = response.data;
+			var data = response.data;
 			
 			for (var i = 0; i < data.length; i++){
 			  if (data[i].Market == "DIN/BTC"){

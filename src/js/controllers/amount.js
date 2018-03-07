@@ -24,7 +24,7 @@ angular.module('copayApp.controllers').controller('amountController', function (
     din_to_usd = parseFloat(value_object.price_usd);
     din_to_btc = parseFloat(value_object.price_btc);*/
   $http.get('https://www.southxchange.com/api/prices').then(function (response) {
-	var value_object = response.data;
+	var data = response.data;
 	
 	for (var i = 0; i < data.length; i++){
 	  if (data[i].Market == "DIN/BTC"){
