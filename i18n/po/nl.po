@@ -90,8 +90,8 @@ msgid "Add Account"
 msgstr "Account Toevoegen"
 
 #: src/js/services/bitpayAccountService.js:69
-msgid "Add BitPay Account?"
-msgstr "BitPay Account Toevoegen?"
+msgid "Add Dinero Account?"
+msgstr "Dinero Account Toevoegen?"
 
 #: www/views/addressbook.add.html:4
 #: www/views/addressbook.html:22
@@ -135,8 +135,8 @@ msgid "Add funds"
 msgstr "Saldo toevoegen"
 
 #: src/js/services/bitpayAccountService.js:78
-msgid "Add this BitPay account ({{email}})?"
-msgstr "Deze BitPay account ({{email}}) toevoegen?"
+msgid "Add this Dinero account ({{email}})?"
+msgstr "Deze Dinero account ({{email}}) toevoegen?"
 
 #: www/views/add.html:3
 msgid "Add wallet"
@@ -269,13 +269,13 @@ msgid "Are you sure you want to skip it?"
 msgstr "Weet u zeker dat u dit wilt overslaan?"
 
 #: www/views/modals/bitpay-card-confirmation.html:4
-msgid "Are you sure you would like to log out of your BitPay Card account?"
-msgstr "Weet u zeker dat u wilt uitloggen uit uw BitPay Kaart account?"
+msgid "Are you sure you would like to log out of your Dinero Card account?"
+msgstr "Weet u zeker dat u wilt uitloggen uit uw Dinero Kaart account?"
 
 #: src/js/controllers/preferencesBitpayCard.js:7
 #: src/js/controllers/preferencesBitpayServices.js:20
-msgid "Are you sure you would like to remove your BitPay Card ({{lastFourDigits}}) from this device?"
-msgstr "Weet u zeker dat u de BitPay Kaart ({{lastFourDigits}}) van dit apparaat wilt verwijderen?"
+msgid "Are you sure you would like to remove your Dinero Card ({{lastFourDigits}}) from this device?"
+msgstr "Weet u zeker dat u de Dinero Kaart ({{lastFourDigits}}) van dit apparaat wilt verwijderen?"
 
 #: www/views/includes/walletInfo.html:10
 msgid "Auditable"
@@ -349,8 +349,8 @@ msgid "Be sure to store your recovery phrase in a secure place. If this app is d
 msgstr "Zorg dat u de herstel zin op een veilige plek bewaard. Als deze app verwijderd is, kan uw saldo niet meer worden hersteld zonder de herstel zin."
 
 #: www/views/preferencesBitpayServices.html:9
-msgid "BitPay Visa&reg; Cards"
-msgstr "BitPay Visa&reg; Kaarten"
+msgid "Dinero Visa&reg; Cards"
+msgstr "Dinero Visa&reg; Kaarten"
 
 #: www/views/addressbook.add.html:38
 #: www/views/includes/incomingDataMenu.html:29
@@ -593,8 +593,8 @@ msgid "Confirming"
 msgstr "Bevestigen"
 
 #: www/views/bitpayCardIntro.html:37
-msgid "Connect my BitPay Card"
-msgstr "Koppelen met mijn BitPay Kaart"
+msgid "Connect my Dinero Card"
+msgstr "Koppelen met mijn Dinero Kaart"
 
 #: src/js/services/onGoingProcess.js:13
 msgid "Connecting to Coinbase..."
@@ -985,8 +985,8 @@ msgid "Enter Spending Password"
 msgstr "Voer Bestedingswachtwoord in"
 
 #: src/js/services/bitpayAccountService.js:110
-msgid "Enter Two Factor for your BitPay account"
-msgstr "Voer Two Factor in voor uw BitPay account"
+msgid "Enter Two Factor for your Dinero account"
+msgstr "Voer Two Factor in voor uw Dinero account"
 
 #: www/views/amount.html:4
 msgid "Enter amount"
@@ -1121,8 +1121,8 @@ msgid "Error in Payment Protocol"
 msgstr "Fout in Betalings Protocol"
 
 #: src/js/controllers/bitpayCardIntro.js:14
-msgid "Error pairing BitPay Account"
-msgstr "Fout tijdens koppelen BitPay Account"
+msgid "Error pairing Dinero Account"
+msgstr "Fout tijdens koppelen Dinero Account"
 
 #: src/js/controllers/paperWallet.js:41
 msgid "Error scanning funds:"
@@ -1219,8 +1219,8 @@ msgid "Feedback could not be submitted. Please try again later."
 msgstr "Feedback kon niet worden ingediend. Probeer het later nog eens."
 
 #: src/js/services/onGoingProcess.js:42
-msgid "Fetching BitPay Account..."
-msgstr "Ophalen BitPay Account..."
+msgid "Fetching Dinero Account..."
+msgstr "Ophalen Dinero Account..."
 
 #: src/js/services/onGoingProcess.js:21
 msgid "Fetching payment information"
@@ -1261,8 +1261,8 @@ msgid "From"
 msgstr "Van"
 
 #: src/js/controllers/bitpayCardIntro.js:71
-msgid "From BitPay account"
-msgstr "Van BitPay account"
+msgid "From Dinero account"
+msgstr "Van Dinero account"
 
 #: www/views/tab-import-phrase.html:57
 msgid "From Hardware Wallet"
@@ -1313,8 +1313,8 @@ msgid "Get local cash anywhere you go, from any Visa<sup>&reg;</sup> compatible 
 msgstr "Verkrijg lokaal contant geld waar je ook gaat, van elke Visa<sup>&reg;</sup> ondersteunende pinautomaat. Kosten voor gebruik van de pinautomaat kunnen in rekening gebracht worden."
 
 #: www/views/onboarding/collectEmail.html:15
-msgid "Get news and updates from BitPay"
-msgstr "Ontvang nieuws en updates van BitPay"
+msgid "Get news and updates from Dinero"
+msgstr "Ontvang nieuws en updates van Dinero"
 
 #: www/views/bitpayCard.html:49
 msgid "Get started"
@@ -1500,8 +1500,8 @@ msgid "If enabled, wallets will also try to spend unconfirmed funds. This option
 msgstr "Indien ingeschakeld, zullen portemonnees ook onbevestigd saldo proberen te besteden. Deze optie kan transactie vertragingen veroorzaken."
 
 #: src/js/controllers/onboarding/backupRequest.js:18
-msgid "If this device is replaced or this app is deleted, neither you nor BitPay can recover your funds without a backup."
-msgstr "Als dit apparaat wordt vervangen of deze app wordt verwijderd, kunnen u noch BitPay uw saldo herstellen zonder backup."
+msgid "If this device is replaced or this app is deleted, neither you nor Dinero can recover your funds without a backup."
+msgstr "Als dit apparaat wordt vervangen of deze app wordt verwijderd, kunnen u noch Dinero uw saldo herstellen zonder backup."
 
 #: www/views/feedback/complete.html:23
 msgid "If you have additional feedback, please let us know by tapping the \"Send feedback\" option in the Settings tab."
@@ -1931,8 +1931,8 @@ msgid "Not enough funds for fee"
 msgstr "Onvoldoende saldo voor transactiekosten"
 
 #: www/views/onboarding/tour.html:50
-msgid "Not even BitPay can access it."
-msgstr "Zelfs BitPay heeft geen toegang."
+msgid "Not even Dinero can access it."
+msgstr "Zelfs Dinero heeft geen toegang."
 
 #: src/js/controllers/paperWallet.js:47
 msgid "Not funds found"
@@ -2065,8 +2065,8 @@ msgid "Open website"
 msgstr "Website openen"
 
 #: www/views/bitpayCardIntro.html:34
-msgid "Order the BitPay Card"
-msgstr "Bestel de BitPay Kaart"
+msgid "Order the Dinero Card"
+msgstr "Bestel de Dinero Kaart"
 
 #: www/views/join.html:105
 #: www/views/join.html:96
@@ -2404,16 +2404,16 @@ msgid "Remove"
 msgstr "Verwijderen"
 
 #: src/js/controllers/preferencesBitpayServices.js:7
-msgid "Remove BitPay Account?"
-msgstr "BitPay Account verwijderen?"
+msgid "Remove Dinero Account?"
+msgstr "Dinero Account verwijderen?"
 
 #: src/js/controllers/preferencesBitpayServices.js:19
-msgid "Remove BitPay Card?"
-msgstr "BitPay Kaart verwijderen?"
+msgid "Remove Dinero Card?"
+msgstr "Dinero Kaart verwijderen?"
 
 #: src/js/controllers/preferencesBitpayServices.js:8
-msgid "Removing your BitPay account will remove all associated BitPay account data from this device. Are you sure you would like to remove your BitPay Account ({{email}}) from this device?"
-msgstr "Het verwijderen van uw BitPay account zal alle geassocieerde BitPay accountgegevens van dit apparaat verwijderen. Weet u zeker dat u de BitPay Account ({{email}}) van dit apparaat wilt verwijderen?"
+msgid "Removing your Dinero account will remove all associated Dinero account data from this device. Are you sure you would like to remove your Dinero Account ({{email}}) from this device?"
+msgstr "Het verwijderen van uw Dinero account zal alle geassocieerde Dinero accountgegevens van dit apparaat verwijderen. Weet u zeker dat u de Dinero Account ({{email}}) van dit apparaat wilt verwijderen?"
 
 #: www/views/join.html:116
 #: www/views/join.html:124
@@ -2887,8 +2887,8 @@ msgid "The maximum number of consecutive unused addresses (20) has been reached.
 msgstr "Het maximum aantal opeenvolgende ongebruikte adressen (20) is bereikt. Wanneer een van uw ongebruikte adressen een betaling ontvangt zal een nieuw adres worden gegenereerd en worden getoond in het tabblad Ontvangen."
 
 #: src/js/controllers/onboarding/terms.js:21
-msgid "The official English Terms of Service are available on the BitPay website."
-msgstr "De officiële Engelse Gebruiksvoorwaarden zijn beschikbaar op de BitPay website."
+msgid "The official English Terms of Service are available on the Dinero website."
+msgstr "De officiële Engelse Gebruiksvoorwaarden zijn beschikbaar op de Dinero website."
 
 #: www/views/tab-import-phrase.html:4
 msgid "The password of the recovery phrase (if set)"
@@ -3006,8 +3006,8 @@ msgid "To get started, you'll need to create a bitcoin wallet and get some bitco
 msgstr "Om aan de slag te gaan zult u een bitcoin portemonnee moeten aanmaken en wat bitcoin moeten verkrijgen."
 
 #: src/js/services/bitpayAccountService.js:73
-msgid "To {{reason}} you must first add your BitPay account - {{email}}"
-msgstr "Om {{reason}} zult u eerst uw BitPay account moeten toevoegen - {{email}}"
+msgid "To {{reason}} you must first add your Dinero account - {{email}}"
+msgstr "Om {{reason}} zult u eerst uw Dinero account moeten toevoegen - {{email}}"
 
 #: src/js/services/onGoingProcess.js:48
 msgid "Top up in progress..."
@@ -3204,8 +3204,8 @@ msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "WAARSCHUWING: NIET-VERTROUWD CERTIFICAAT"
 
 #: www/views/preferencesPrivateKey.html:14
-msgid "WARNING: Your extended private keys are all that is needed to access your bitcoin funds. Be sure to protect your private keys and store them only on secure devices. BitPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
-msgstr "WAARSCHUWING: Uw verlengde privé sleutels zijn het enige dat nodig is om toegang tot uw bitcoin te verkrijgen. Bescherm uw privé sleutels goed en bewaar deze alleen op beveiligde apparaten. BitPay heeft geen toegang tot uw privé sleutels, u bent zelf als enige verantwoordelijk voor het bewaren van uw sleutels. Als u toegang tot de sleutels deelt met externe diensten neemt u zelf de verantwoordelijkheid voor het risico op diefstal of inbraak. Het direct hanteren van verlengde privé sleutels is enkel voor gevorderde gebruikers."
+msgid "WARNING: Your extended private keys are all that is needed to access your bitcoin funds. Be sure to protect your private keys and store them only on secure devices. Dinero does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
+msgstr "WAARSCHUWING: Uw verlengde privé sleutels zijn het enige dat nodig is om toegang tot uw bitcoin te verkrijgen. Bescherm uw privé sleutels goed en bewaar deze alleen op beveiligde apparaten. Dinero heeft geen toegang tot uw privé sleutels, u bent zelf als enige verantwoordelijk voor het bewaren van uw sleutels. Als u toegang tot de sleutels deelt met externe diensten neemt u zelf de verantwoordelijkheid voor het risico op diefstal of inbraak. Het direct hanteren van verlengde privé sleutels is enkel voor gevorderde gebruikers."
 
 #: src/js/services/onGoingProcess.js:15
 msgid "Waiting for Ledger..."
@@ -3485,16 +3485,16 @@ msgid "You should not set a fee higher than {{maxFeeRecommended}} satoshis/byte.
 msgstr "Het is af te raden transactiekosten te kiezen hoger dan {{maxFeeRecommended}} satoshi's/byte."
 
 #: www/views/modals/bitpay-card-confirmation.html:5
-msgid "You will need to log back for fill in your BitPay Card."
-msgstr "U zult opnieuw moeten inloggen om uw BitPay Kaart op te laden."
+msgid "You will need to log back for fill in your Dinero Card."
+msgstr "U zult opnieuw moeten inloggen om uw Dinero Kaart op te laden."
 
 #: www/views/preferencesNotifications.html:34
 msgid "You'll receive email notifications about payments sent and received from your wallets."
 msgstr "U zult email meldingen ontvangen over verzonden en ontvangen betalingen van uw portemonnee."
 
 #: www/views/bitpayCard.html:50
-msgid "Your BitPay Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
-msgstr "Uw BitPay Kaart is gereed. Voeg saldo toe aan uw kaart om deze te kunnen gebruiken in winkels en pinautomaten over de hele wereld."
+msgid "Your Dinero Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
+msgstr "Uw Dinero Kaart is gereed. Voeg saldo toe aan uw kaart om deze te kunnen gebruiken in winkels en pinautomaten over de hele wereld."
 
 #: www/views/mercadoLibre.html:57
 #: www/views/mercadoLibreCards.html:6
@@ -3562,8 +3562,8 @@ msgid "[Scanning Funds]"
 msgstr "[Saldo Scannen]"
 
 #: src/js/controllers/bitpayCardIntro.js:11
-msgid "add your BitPay Visa card(s)"
-msgstr "voeg uw BitPay Visa kaart(en) toe"
+msgid "add your Dinero Visa card(s)"
+msgstr "voeg uw Dinero Visa kaart(en) toe"
 
 #: www/views/includes/available-balance.html:8
 msgid "locked by pending payments"
@@ -3594,8 +3594,8 @@ msgid "{{amountStr}} for Mercado Livre Brazil Gift Card"
 msgstr "{{amountStr}} voor Mercado Livre Brazil Cadeaubon"
 
 #: www/views/preferencesBwsUrl.html:21
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
-msgstr "{{appName}} is afhankelijk van Bitcore Wallet Service (BWS) voor blockchain informatie, netwerk verbinding en Copayer synchronisatie. De standaard instelling wijst naar https://bws.bitpay.com (BitPay's openbare BWS instance)."
+msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (Dinero's public BWS instance)."
+msgstr "{{appName}} is afhankelijk van Bitcore Wallet Service (BWS) voor blockchain informatie, netwerk verbinding en Copayer synchronisatie. De standaard instelling wijst naar https://bws.bitpay.com (Dinero's openbare BWS instance)."
 
 #: src/js/controllers/confirm.js:408
 msgid "{{fee}} will be deducted for bitcoin networking fees."
