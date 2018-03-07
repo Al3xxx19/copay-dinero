@@ -48,12 +48,20 @@ angular.module('copayApp.controllers').controller('customAmountController', func
         /*$http.get('https://api.coinmarketcap.com/v1/ticker/dinero/').then(function (response) {
           var value_object = response.data[0];
           var din_to_btc = parseFloat(value_object.price_btc);*/
-		  $http.get('https://www.worldcoinindex.com/apiservice/ticker?key=11SnhXn6OwKcniX1eXrZk7cANPnc20&label=USDTBTC-DINBTC&fiat=btc').then(function (response) {
-			var value_usd = response.data.Markets[0];
-			var value_din = response.data.Markets[1];
-			din_to_btc = parseFloat(value_din.Price);
-			din_to_usd = din_to_btc / parseFloat(value_usd.Price);
+		  $http.get('https://www.southxchange.com/api/prices').then(function (response) {
+			var value_object = response.data;
 			
+			for (var i = 0; i < data.length; i++){
+			  if (data[i].Market == "DIN/BTC"){
+				din_to_btc = parseFloat(data[i].Last);
+			  }
+			}
+			for (var i = 0; i < data.length; i++){
+			  if (data[i].Market == "BTC/USD"){
+				din_to_usd = din_to_btc * parseFloat(data[i].Last);
+			  }
+			}
+	
             amountUnit = parseFloat(amountUnit / din_to_btc);
             
             // var btcParsedAmount = txFormatService.parseAmount($scope.wallet.coin, amountUnit, $scope.wallet.coin);
@@ -69,11 +77,19 @@ angular.module('copayApp.controllers').controller('customAmountController', func
         /*$http.get('https://api.coinmarketcap.com/v1/ticker/dinero/').then(function (response) {
           var value_object = response.data[0];
           var din_to_btc = parseFloat(value_object.price_btc);*/
-		  $http.get('https://www.worldcoinindex.com/apiservice/ticker?key=11SnhXn6OwKcniX1eXrZk7cANPnc20&label=USDTBTC-DINBTC&fiat=btc').then(function (response) {
-			var value_usd = response.data.Markets[0];
-			var value_din = response.data.Markets[1];
-			din_to_btc = parseFloat(value_din.Price);
-			din_to_usd = din_to_btc / parseFloat(value_usd.Price);
+		  $http.get('https://www.southxchange.com/api/prices').then(function (response) {
+			var value_object = response.data;
+			
+			for (var i = 0; i < data.length; i++){
+			  if (data[i].Market == "DIN/BTC"){
+				din_to_btc = parseFloat(data[i].Last);
+			  }
+			}
+			for (var i = 0; i < data.length; i++){
+			  if (data[i].Market == "BTC/USD"){
+				din_to_usd = din_to_btc * parseFloat(data[i].Last);
+			  }
+			}
 
             $scope.amountBtc = parseFloat(amount / din_to_btc);;
             // $scope.altAmountStr = txFormatService.formatAlternativeStr($scope.wallet.coin, parsedAmount.amountSat);

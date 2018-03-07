@@ -16,11 +16,19 @@ angular.module('copayApp.services').service('walletService', function($log, $tim
     var value_object = response.data[0];
     din_to_usd = parseFloat(value_object.price_usd);
     din_to_btc = parseFloat(value_object.price_btc);*/
-  $http.get('https://www.worldcoinindex.com/apiservice/ticker?key=11SnhXn6OwKcniX1eXrZk7cANPnc20&label=USDTBTC-DINBTC&fiat=btc').then(function (response) {
-    var value_usd = response.data.Markets[0];
-    var value_din = response.data.Markets[1];
-    din_to_btc = parseFloat(value_din.Price);
-    din_to_usd = din_to_btc / parseFloat(value_usd.Price); 	
+  $http.get('https://www.southxchange.com/api/prices').then(function (response) {
+	var value_object = response.data;
+	
+	for (var i = 0; i < data.length; i++){
+	  if (data[i].Market == "DIN/BTC"){
+		din_to_btc = parseFloat(data[i].Last);
+	  }
+	}
+	for (var i = 0; i < data.length; i++){
+	  if (data[i].Market == "BTC/USD"){
+		din_to_usd = din_to_btc * parseFloat(data[i].Last);
+	  }
+	}
   },function (err) {
     conosle.log(err);
   });
