@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('copayApp.controllers').controller('tabHomeController',
-  function($rootScope, $timeout, $scope, $state, $stateParams, $ionicModal, $ionicScrollDelegate, $window, gettextCatalog, lodash, popupService, ongoingProcess, externalLinkService, latestReleaseService, profileService, walletService, configService, $log, platformInfo, storageService, txpModalService, appConfigService, startupService, addressbookService, feedbackService, bwcError, nextStepsService, buyAndSellService, homeIntegrationsService, bitpayCardService, pushNotificationsService, timeService) {
+  function($rootScope, $timeout, $scope, $state, $stateParams, $ionicModal, $ionicScrollDelegate, $window, gettextCatalog, lodash, popupService, ongoingProcess, externalLinkService, latestReleaseService, profileService, walletService, configService, $log, platformInfo, storageService, txpModalService, appConfigService, startupService, addressbookService, feedbackService, bwcError, nextStepsService, buyAndSellService, homeIntegrationsService, bitpayCardService, pushNotificationsService, timeService, $http) {
     var wallet;
     var listeners = [];
     var notifications = [];
@@ -214,12 +214,12 @@ angular.module('copayApp.controllers').controller('tabHomeController',
     var updateAllWallets = function() {
       var wallets = [];
       $scope.walletsBtc = profileService.getWallets({coin: 'btc'});
-      $scope.walletsBch = profileService.getWallets({coin: 'bch'});
 
       lodash.each($scope.walletsBtc, function(wBtc) {
         wallets.push(wBtc);
       });
 
+      $scope.walletsBch = profileService.getWallets({coin: 'bch'});
       lodash.each($scope.walletsBch, function(wBch) {
         wallets.push(wBch);
       });

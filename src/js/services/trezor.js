@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('copayApp.services')
-  .factory('trezor', function($log, $timeout, lodash, bitcore, hwWallet, platformInfo) {
+  .service('trezor', function($log, $timeout, lodash, bitcore, hwWallet, platformInfo) {
     var root = {};
 
     var SETTLE_TIME = 3000;

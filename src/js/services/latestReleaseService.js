@@ -1,6 +1,6 @@
 'use strict';
 angular.module('copayApp.services')
-  .factory('latestReleaseService', function latestReleaseServiceFactory($log, $http, configService) {
+  .service('latestReleaseService', function latestReleaseServiceFactory($log, $http, configService) {
 
     var root = {};
 

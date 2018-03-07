@@ -1,6 +1,6 @@
 'use strict';
 angular.module('copayApp.services')
-  .factory('applicationService', function($rootScope, $timeout, $ionicHistory, $ionicModal, platformInfo, fingerprintService, openURLService, configService, $state) {
+  .service('applicationService', function($rootScope, $timeout, $ionicHistory, $ionicModal, platformInfo, fingerprintService, openURLService, configService, $state) {
     var root = {};
 
     root.isPinModalOpen = false;

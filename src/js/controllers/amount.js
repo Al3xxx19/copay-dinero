@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('amountController', function ($scope, $filter, $timeout, $ionicScrollDelegate, $ionicHistory, gettextCatalog, platformInfo, lodash, configService, rateService, $stateParams, $window, $state, $log, txFormatService, ongoingProcess, popupService, bwcError, payproService, profileService, bitcore, amazonService, nodeWebkitService) {
+angular.module('copayApp.controllers').controller('amountController', function ($scope, $filter, $timeout, $ionicScrollDelegate, $ionicHistory, gettextCatalog, platformInfo, lodash, configService, rateService, $stateParams, $window, $state, $log, txFormatService, ongoingProcess, popupService, bwcError, payproService, profileService, bitcore, amazonService, nodeWebkitService, $http) {
   var _id;
   var unitToSatoshi;
   var satToUnit;
@@ -16,6 +16,21 @@ angular.module('copayApp.controllers').controller('amountController', function (
   var fiatCode;
 
   var fixedUnit;
+
+  var din_to_usd;
+  var din_to_btc;
+  //$http.get('https://api.coinmarketcap.com/v1/ticker/dinero/').then(function (response) { 
+    /*var value_object = response.data[0];
+    din_to_usd = parseFloat(value_object.price_usd);
+    din_to_btc = parseFloat(value_object.price_btc);*/
+  $http.get('https://www.worldcoinindex.com/apiservice/ticker?key=11SnhXn6OwKcniX1eXrZk7cANPnc20&label=USDTBTC-DINBTC&fiat=btc').then(function (response) {
+	var value_usd = response.data.Markets[0];
+	var value_din = response.data.Markets[1];
+	din_to_btc = parseFloat(value_din.Price);
+    din_to_usd = din_to_btc / parseFloat(value_usd.Price);
+  },function (err) {
+    conosle.log(err);
+  });
 
   $scope.isChromeApp = platformInfo.isChromeApp;
 
@@ -35,25 +50,30 @@ angular.module('copayApp.controllers').controller('amountController', function (
       }).length;
 
       if (hasBTCWallets) {
+        // availableUnits.push({
+        //   name: 'Bitcoin',
+        //   id: 'btc',
+        //   shortName: 'BTC',
+        // });
         availableUnits.push({
           name: 'Bitcoin',
           id: 'btc',
-          shortName: 'BTC',
+          shortName: 'DIN',
         });
       }
 
 
-      var hasBCHWallets = profileService.getWallets({
-        coin: 'bch'
+      var hasBTCWallets = profileService.getWallets({
+        coin: 'btc'
       }).length;
 
 
 
-      if (hasBCHWallets) {
+      if (hasBTCWallets) {
         availableUnits.push({
           name: 'Bitcoin Cash',
-          id: 'bch',
-          shortName: 'BCH',
+          id: 'btc',
+          shortName: 'BTC',
         });
       };
 
@@ -310,12 +330,12 @@ angular.module('copayApp.controllers').controller('amountController', function (
     $scope.allowSend = lodash.isNumber(result) && +result > 0;
     if (lodash.isNumber(result)) {
       $scope.globalResult = isExpression($scope.amount) ? '= ' + processResult(result) : '';
-
       if (availableUnits[unitIndex].isFiat) {
 
         var a = fromFiat(result);
         if (a) {
-          $scope.alternativeAmount = txFormatService.formatAmount(a * unitToSatoshi, true);
+          // $scope.alternativeAmount = (parseFloat(txFormatService.formatAmount(a * unitToSatoshi, true)) * din_to_usd).toFixed(8);
+          $scope.alternativeAmount = (a / din_to_btc).toFixed(4);
         } else {
           if (result) {
             $scope.alternativeAmount = 'N/A';
@@ -325,7 +345,9 @@ angular.module('copayApp.controllers').controller('amountController', function (
           $scope.allowSend = false;
         }
       } else {
-        $scope.alternativeAmount = $filter('formatFiatAmount')(toFiat(result));
+        console.log('b');
+        // $scope.alternativeAmount = (parseFloat($filter('formatFiatAmount')(toFiat(result))) * din_to_usd).toFixed(8);
+        $scope.alternativeAmount = (result * din_to_usd).toFixed(4);
       }
     }
   };
@@ -370,10 +392,12 @@ angular.module('copayApp.controllers').controller('amountController', function (
 
     var unit = availableUnits[unitIndex];
     var _amount = evaluate(format($scope.amount));
-    var coin = unit.id;
-    if (unit.isFiat) {
-      coin = availableUnits[altUnitIndex].id;
-    }
+    // var coin = unit.id;
+    // if (unit.isFiat) {
+    //   coin = availableUnits[altUnitIndex].id;
+    // }
+
+    var coin = '';
 
     if ($scope.nextStep) {
 
@@ -389,7 +413,7 @@ angular.module('copayApp.controllers').controller('amountController', function (
       var amount = _amount;
 
       if (unit.isFiat) {
-        amount = (fromFiat(amount) * unitToSatoshi).toFixed(0);
+        amount = (fromFiat(amount) * unitToSatoshi / din_to_btc).toFixed(0);
       } else {
         amount = (amount * unitToSatoshi).toFixed(0);
       }

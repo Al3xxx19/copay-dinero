@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('txDetailsController', function($rootScope, $log, $ionicHistory, $scope, $timeout, walletService, lodash, gettextCatalog, profileService, externalLinkService, popupService, ongoingProcess, txFormatService, txConfirmNotification, feeService, configService) {
+angular.module('copayApp.controllers').controller('txDetailsController', function($rootScope, $log, $ionicHistory, $scope, $timeout, walletService, lodash, gettextCatalog, profileService, externalLinkService, popupService, ongoingProcess, txFormatService, txConfirmNotification, feeService, configService, $http) {
 
   var txId;
   var listeners = [];
@@ -17,9 +17,14 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
     $scope.txsUnsubscribedForNotifications = config.confirmedTxsNotifications ? !config.confirmedTxsNotifications.enabled : true;
 
     if ($scope.wallet.coin == 'bch') {
-      blockexplorerUrl = 'bch-insight.bitpay.com';
+      if (walletService.useLegacyAddress($scope.wallet)) {
+        blockexplorerUrl = 'bch-insight.bitpay.com';
+      } else {
+        blockexplorerUrl = 'blockdozer.com/insight';
+      }
     } else {
-      blockexplorerUrl = 'insight.bitpay.com';
+      // blockexplorerUrl = 'insight.bitpay.com';
+      blockexplorerUrl = 'insights.dinerocoin.org';
     }
 
     txConfirmNotification.checkIfEnabled(txId, function(res) {
@@ -119,8 +124,8 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
         return popupService.showAlert(gettextCatalog.getString('Error'), gettextCatalog.getString('Transaction not available at this time'));
       }
 
-      $scope.btx = txFormatService.processTx($scope.wallet.coin, tx,
-        walletService.useLegacyAddress());
+      $scope.btx = txFormatService.processTx($scope.wallet.coin, tx, 
+        walletService.useLegacyAddress($scope.wallet));
 
       txFormatService.formatAlternativeStr($scope.wallet.coin, tx.fees, function(v) {
         $scope.btx.feeFiatStr = v;
@@ -132,6 +137,11 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
         if ($scope.btx.action == 'received') $scope.title = gettextCatalog.getString('Received Funds');
         if ($scope.btx.action == 'moved') $scope.title = gettextCatalog.getString('Moved Funds');
       }
+
+        $scope.btx.amountStr = $scope.btx.amountStr.replace('btc','dinero');
+        $scope.btx.amountValueStr = $scope.btx.amountStr.split(" ")[0];
+        $scope.btx.amountUnitStr = $scope.btx.amountStr.split(" ")[1];
+        $scope.btx.feeStr = $scope.btx.feeStr.replace('btc','dinero');
 
       updateMemo();
       initActionList();
@@ -202,7 +212,9 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
   };
 
   var getFiatRate = function() {
-    $scope.alternativeIsoCode = $scope.wallet.status.alternativeIsoCode;
+    if($scope.wallet.status) {
+      $scope.alternativeIsoCode = $scope.wallet.status.alternativeIsoCode;  
+    }
     $scope.wallet.getFiatRate({
       code: $scope.alternativeIsoCode,
       ts: $scope.btx.time * 1000

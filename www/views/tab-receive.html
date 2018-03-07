@@ -22,7 +22,7 @@
             <span translate>Incomplete wallet</span>
           </div>
           <div class="subtitle">
-            <span translate>All signing devices must be added to this multisig wallet before bitcoin addresses can be created.</span>
+            <span translate>All signing devices must be added to this multisig wallet before dinero addresses can be created.</span>
           </div>
           <button class="button button-standard button-primary" ng-click="goCopayers()" translate>Open wallet</button>
         </div>
@@ -67,7 +67,8 @@
           {{wallet.name || wallet.id}}
         </span>
         <p>
-        <span ng-if="!wallet.balanceHidden"> {{wallet.status.totalBalanceStr}} </span>
+        <!-- <span ng-if="!wallet.balanceHidden"> {{wallet.status.totalBalanceStr}} </span> -->
+        <span ng-if="!wallet.balanceHidden"> {{wallet.status.totalBalanceStr.replace('btc','dinero') ? wallet.status.totalBalanceStr.replace('btc','dinero') : wallet.cachedBalance.replace('btc','dinero') }} </span>
 
         <span ng-if="wallet.balanceHidden" translate>[Balance Hidden]</span>
         <span class="tab-home__wallet__multisig-number" ng-if="wallet.n > 1">
@@ -81,6 +82,13 @@
     </div>
 
   </ion-content>
+  <!-- <wallet-selector
+    wallet-selector-title="walletSelectorTitle"
+    wallet-selector-wallets="convertedWallets"
+    wallet-selector-selected-wallet="wallet"
+    wallet-selector-show="showWallets"
+    wallet-selector-on-select="onWalletSelect">
+  </wallet-selector> -->
   <wallet-selector
     wallet-selector-title="walletSelectorTitle"
     wallet-selector-wallets="wallets"

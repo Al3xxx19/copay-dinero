@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.services').factory('appIdentityService', function($log, lodash, storageService, bitauthService) {
+angular.module('copayApp.services').service('appIdentityService', function($log, lodash, storageService, bitauthService) {
   var root = {};
 
   root.getIdentity = function(network, cb) {

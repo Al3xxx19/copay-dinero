@@ -1,6 +1,6 @@
 'use strict';
 angular.module('copayApp.controllers').controller('tourController',
-  function ($scope, $state, $log, $timeout, $filter, ongoingProcess, profileService, rateService, popupService, gettextCatalog) {
+  function ($scope, $state, $log, $timeout, $filter, ongoingProcess, profileService, rateService, popupService, gettextCatalog, $http) {
 
     $scope.data = {
       index: 0
@@ -27,9 +27,28 @@ angular.module('copayApp.controllers').controller('tourController',
       rateService.whenAvailable(function () {
         var localCurrency = 'USD';
         var btcAmount = 1;
-        var rate = rateService.toFiat(btcAmount * 1e8, localCurrency, 'btc');
-        $scope.localCurrencySymbol = '$';
-        $scope.localCurrencyPerBtc = $filter('formatFiatAmount')(parseFloat(rate.toFixed(2), 10));
+
+        // var rate = rateService.toFiat(btcAmount * 1e8, localCurrency, 'btc');
+        // $scope.localCurrencySymbol = '$';
+        // $scope.localCurrencyPerBtc = $filter('formatFiatAmount')(parseFloat(rate.toFixed(2), 10));
+
+        /*$http.get('https://api.coinmarketcap.com/v1/ticker/dinero/').then(function (response) {
+          var value_object = response.data[0];
+
+          $scope.localCurrencySymbol = '$';
+          $scope.localCurrencyPerDin = $filter('formatFiatAmount')(parseFloat(parseFloat(value_object['price_usd']).toFixed(4), 10));*/
+		$http.get('https://www.worldcoinindex.com/apiservice/ticker?key=11SnhXn6OwKcniX1eXrZk7cANPnc20&label=USDTBTC-DINBTC&fiat=btc').then(function (response) {
+		  var value_usd = response.data.Markets[0];
+		  var value_din = response.data.Markets[1];
+		  din_to_btc = parseFloat(value_din.Price);
+		  din_to_usd = din_to_btc / parseFloat(value_usd.Price);  
+		  
+		  $scope.localCurrencySymbol = '$';
+          $scope.localCurrencyPerDin = $filter('formatFiatAmount')(parseFloat(din_to_usd.toFixed(4), 10));
+        },function (err) {
+          conosle.log(err);
+        });
+
         $timeout(function () {
           $scope.$apply();
         })

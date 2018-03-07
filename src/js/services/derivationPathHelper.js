@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.services').factory('derivationPathHelper', function(lodash) {
+angular.module('copayApp.services').service('derivationPathHelper', function(lodash) {
   var root = {};
 
   root.default = "m/44'/0'/0'";

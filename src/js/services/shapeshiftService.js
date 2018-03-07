@@ -1,5 +1,5 @@
 'use strict';
-angular.module('copayApp.services').factory('shapeshiftService', function($http, $log, $window, lodash, moment, storageService, configService, platformInfo, nextStepsService, homeIntegrationsService) {
+angular.module('copayApp.services').service('shapeshiftService', function($http, $log, $window, lodash, moment, storageService, configService, platformInfo, nextStepsService, homeIntegrationsService) {
   var root = {};
   var credentials = {};
 
@@ -154,7 +154,7 @@ angular.module('copayApp.services').factory('shapeshiftService', function($http,
       if (ss) {
         homeIntegrationsService.register(homeItem);
       } else {
-        nextStepsService.register(homeItem);
+        // nextStepsService.register(homeItem);
       }
     });
   };

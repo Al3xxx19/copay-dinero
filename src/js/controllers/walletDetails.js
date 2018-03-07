@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('walletDetailsController', function($scope, $rootScope, $interval, $timeout, $filter, $log, $ionicModal, $ionicPopover, $state, $stateParams, $ionicHistory, profileService, lodash, configService, platformInfo, walletService, txpModalService, externalLinkService, popupService, addressbookService, storageService, $ionicScrollDelegate, $window, bwcError, gettextCatalog, timeService, feeService, appConfigService) {
+angular.module('copayApp.controllers').controller('walletDetailsController', function($scope, $rootScope, $interval, $timeout, $filter, $log, $ionicModal, $ionicPopover, $state, $stateParams, $ionicHistory, profileService, lodash, configService, platformInfo, walletService, txpModalService, externalLinkService, popupService, addressbookService, storageService, $ionicScrollDelegate, $window, bwcError, gettextCatalog, timeService, feeService, appConfigService, $http) {
 
   var HISTORY_SHOW_LIMIT = 10;
   var currentTxHistoryPage = 0;
@@ -78,6 +78,32 @@ angular.module('copayApp.controllers').controller('walletDetailsController', fun
       } else {
         setPendingTxps(status.pendingTxps);
         $scope.status = status;
+        if($scope.status) {
+          // Available Balance
+          if($scope.status.availableBalanceStr) {
+            $scope.status.availableBalanceStr = $scope.status.availableBalanceStr.replace('btc','dinero');
+          }
+
+          // Total Balance
+          if($scope.status.totalBalanceStr) {
+            $scope.status.totalBalanceStr = $scope.status.totalBalanceStr.replace('btc','dinero');
+          }
+
+          // Locked Balance
+          if($scope.status.lockedBalanceStr) {
+            $scope.status.lockedBalanceStr = $scope.status.lockedBalanceStr.replace('btc','dinero');
+          }
+
+          // Pending Balance
+          if($scope.status.pendingBalanceStr) {
+            $scope.status.pendingBalanceStr = $scope.status.pendingBalanceStr.replace('btc','dinero');
+          }
+
+          // Spendable Balance
+          if($scope.status.spendableBalanceStr) {
+            $scope.status.spendableBalanceStr = $scope.status.spendableBalanceStr.replace('btc','dinero');
+          }
+        }
       }
       refreshAmountSection();
       $timeout(function() {
@@ -193,6 +219,9 @@ angular.module('copayApp.controllers').controller('walletDetailsController', fun
     if ($scope.completeTxHistory) {
       $scope.txHistory = $scope.completeTxHistory.slice(0, (currentTxHistoryPage + 1) * HISTORY_SHOW_LIMIT);
       $scope.txHistoryShowMore = $scope.completeTxHistory.length > $scope.txHistory.length;
+      for(var i = 0 ; i < $scope.txHistory.length; i++) {
+        $scope.txHistory[i].amountStr = $scope.txHistory[i].amountStr.replace('btc','dinero');
+      }
     }
   };
 
@@ -360,6 +389,8 @@ angular.module('copayApp.controllers').controller('walletDetailsController', fun
       $scope.status = null;
     } else {
       $scope.status = $scope.wallet.cachedStatus;
+      $scope.status.totalBalanceStr = $scope.status.totalBalanceStr.replace('btc','dinero');
+
       if ($scope.wallet.completeHistory) {
         $scope.completeTxHistory = $scope.wallet.completeHistory;
         $scope.showHistory();

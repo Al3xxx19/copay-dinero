@@ -32,7 +32,7 @@ angular.module('copayApp.filters', [])
       var formats = locale.NUMBER_FORMATS;
       return function(amount) {
 
-        var fractionSize = 2;
+        var fractionSize = 8;
         var value = numberFilter(amount, fractionSize);
         var sep = value.indexOf(formats.DECIMAL_SEP);
         var group = value.indexOf(formats.GROUP_SEP);
@@ -44,13 +44,13 @@ angular.module('copayApp.filters', [])
             }
             var intValue = value.substring(0, sep);
             var floatValue = parseFloat(value.substring(sep));
-            floatValue = floatValue.toFixed(2);
+            floatValue = floatValue.toFixed(8);
             floatValue = floatValue.toString().substring(1);
             var finalValue = intValue + floatValue;
             return finalValue;
           } else {
             value = parseFloat(value);
-            return value.toFixed(2);
+            return value.toFixed(8);
           }
         }
         return 0;

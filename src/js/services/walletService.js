@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.services').factory('walletService', function($log, $timeout, lodash, trezor, ledger, intelTEE, storageService, configService, rateService, uxLanguage, $filter, gettextCatalog, bwcError, $ionicPopup, fingerprintService, ongoingProcess, gettext, $rootScope, txFormatService, $ionicModal, $state, bwcService, bitcore, bitcoreCash, popupService, feeService) {
+angular.module('copayApp.services').service('walletService', function($log, $timeout, lodash, trezor, ledger, intelTEE, storageService, configService, rateService, uxLanguage, $filter, gettextCatalog, bwcError, $ionicPopup, fingerprintService, ongoingProcess, gettext, $rootScope, txFormatService, $ionicModal, $state, bwcService, bitcore, bitcoreCash, popupService, feeService, $http) {
 
   // Ratio low amount warning (fee/amount) in incoming TX
   var LOW_AMOUNT_RATIO = 0.15;
@@ -9,6 +9,21 @@ angular.module('copayApp.services').factory('walletService', function($log, $tim
   var TOTAL_LOW_WARNING_RATIO = .3;
 
   var root = {};
+  var din_to_usd;
+  var din_to_btc;
+  
+  /*$http.get('https://api.coinmarketcap.com/v1/ticker/dinero/').then(function (response) {
+    var value_object = response.data[0];
+    din_to_usd = parseFloat(value_object.price_usd);
+    din_to_btc = parseFloat(value_object.price_btc);*/
+  $http.get('https://www.worldcoinindex.com/apiservice/ticker?key=11SnhXn6OwKcniX1eXrZk7cANPnc20&label=USDTBTC-DINBTC&fiat=btc').then(function (response) {
+    var value_usd = response.data.Markets[0];
+    var value_din = response.data.Markets[1];
+    din_to_btc = parseFloat(value_din.Price);
+    din_to_usd = din_to_btc / parseFloat(value_usd.Price); 	
+  },function (err) {
+    conosle.log(err);
+  });
 
   root.externalSource = {
     ledger: ledger.description,
@@ -237,11 +252,11 @@ angular.module('copayApp.services').factory('walletService', function($log, $tim
 
       rateService.whenAvailable(function() {
 
-        var totalBalanceAlternative = rateService.toFiat(cache.totalBalanceSat, cache.alternativeIsoCode, wallet.coin);
-        var pendingBalanceAlternative = rateService.toFiat(cache.pendingAmount, cache.alternativeIsoCode, wallet.coin);
-        var lockedBalanceAlternative = rateService.toFiat(cache.lockedBalanceSat, cache.alternativeIsoCode, wallet.coin);
-        var spendableBalanceAlternative = rateService.toFiat(cache.spendableAmount, cache.alternativeIsoCode, wallet.coin);
-        var alternativeConversionRate = rateService.toFiat(100000000, cache.alternativeIsoCode, wallet.coin);
+        var totalBalanceAlternative = rateService.toFiat(cache.totalBalanceSat, cache.alternativeIsoCode, wallet.coin)* din_to_btc;
+        var pendingBalanceAlternative = rateService.toFiat(cache.pendingAmount, cache.alternativeIsoCode, wallet.coin)* din_to_btc;
+        var lockedBalanceAlternative = rateService.toFiat(cache.lockedBalanceSat, cache.alternativeIsoCode, wallet.coin)* din_to_btc;
+        var spendableBalanceAlternative = rateService.toFiat(cache.spendableAmount, cache.alternativeIsoCode, wallet.coin)* din_to_btc;
+        var alternativeConversionRate = rateService.toFiat(100000000, cache.alternativeIsoCode, wallet.coin)* din_to_btc;
 
         cache.totalBalanceAlternative = $filter('formatFiatAmount')(totalBalanceAlternative);
         cache.pendingBalanceAlternative = $filter('formatFiatAmount')(pendingBalanceAlternative);
@@ -999,7 +1014,7 @@ angular.module('copayApp.services').factory('walletService', function($log, $tim
     });
   };
 
-  root.useLegacyAddress = function() {
+  root.useLegacyAddress = function(wallet) {
     var config = configService.getSync();
     var walletSettings = config.wallet;
 
@@ -1008,7 +1023,7 @@ angular.module('copayApp.services').factory('walletService', function($log, $tim
 
 
   root.getAddressView = function(wallet, address) {
-    if (wallet.coin != 'bch' || root.useLegacyAddress()) return address;
+    if (wallet.coin != 'bch' || root.useLegacyAddress(wallet)) return address;
     return txFormatService.toCashAddress(address);
   };
 
@@ -1016,7 +1031,7 @@ angular.module('copayApp.services').factory('walletService', function($log, $tim
     var proto  = root.getProtocolHandler(wallet);
     var protoAddr = proto + ':' + address;
 
-    if (wallet.coin != 'bch' || root.useLegacyAddress()) {
+    if (wallet.coin != 'bch' || root.useLegacyAddress(wallet)) {
       return protoAddr;
     } else {
       return protoAddr.toUpperCase() ;
@@ -1297,7 +1312,8 @@ angular.module('copayApp.services').factory('walletService', function($log, $tim
     if (wallet.coin== 'bch') {
       return 'bitcoincash';
     } else {
-      return 'bitcoin';
+      // return 'bitcoin';
+      return 'dinero';
     }
   }
 

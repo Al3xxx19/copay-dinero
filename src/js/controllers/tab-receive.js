@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('tabReceiveController', function($rootScope, $scope, $timeout, $log, $ionicModal, $state, $ionicHistory, $ionicPopover, storageService, platformInfo, walletService, profileService, configService, lodash, gettextCatalog, popupService, bwcError, bitcoreCash) {
+angular.module('copayApp.controllers').controller('tabReceiveController', function($rootScope, $scope, $timeout, $log, $ionicModal, $state, $ionicHistory, $ionicPopover, storageService, platformInfo, walletService, profileService, configService, lodash, gettextCatalog, popupService, bwcError, bitcoreCash, $http) {
 
   var listeners = [];
   $scope.isCordova = platformInfo.isCordova;
@@ -92,13 +92,16 @@ angular.module('copayApp.controllers').controller('tabReceiveController', functi
 
   $scope.$on("$ionicView.beforeEnter", function(event, data) {
     $scope.wallets = profileService.getWallets();
+
     $scope.singleWallet = $scope.wallets.length == 1;
 
     if (!$scope.wallets[0]) return;
 
     // select first wallet if no wallet selected previously
+
     var selectedWallet = checkSelectedWallet($scope.wallet, $scope.wallets);
     $scope.onWalletSelect(selectedWallet);
+
 
     $scope.showShareButton = platformInfo.isCordova ? (platformInfo.isIOS ? 'iOS' : 'Android') : null;
 

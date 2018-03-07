@@ -1,6 +1,7 @@
 <ion-view id="tab-home" show-tabs>
   <ion-nav-bar class="bar-royal">
-    <ion-nav-title><img class="tab-home__logo" src="img/app/logo-negative.svg"></ion-nav-title>
+    <!-- <ion-nav-title><img class="tab-home__logo" src="img/app/coin-icon.png"></ion-nav-title> -->
+    <ion-nav-title><img class="tab-home__logo" src="img/app/icon.png"></ion-nav-title>
   </ion-nav-bar>
 
   <ion-content>
@@ -48,7 +49,7 @@
         </i>
       </div>
       <div class="title" translate>
-        Your bitcoin wallet is ready!
+        Your dinero wallet is ready!
       </div>
       <div class="subtitle" translate>
         On this screen you can see all your wallets, accounts, and assets.
@@ -73,6 +74,7 @@
         <i class="icon bp-arrow-right"></i>
         <span class="badge badge-assertive m5t m10r" ng-show="notificationsN>3"> {{notificationsN}}</span>
       </a>
+      <!-- <a class="item item-sub activity" ng-repeat="notification in convertedNotifications" ng-click="openNotificationModal(notification)"> -->
       <a class="item item-sub activity" ng-repeat="notification in notifications" ng-click="openNotificationModal(notification)">
         <span ng-include="'views/includes/walletActivity.html'"></span>
       </a>
@@ -86,18 +88,24 @@
         <i class="icon big-icon-svg">
           <img src="img/icon-wallet.svg" class="bg wallet icon-create-wallet"/>
         </i>
-        <span translate>Create bitcoin wallet</span>
+        <span translate>Create dinero wallet</span>
         <i class="icon bp-arrow-right"></i>
       </a>
     </div>
 
     <div class="list card" ng-if="walletsBtc[0]">
       <div class="item item-icon-right item-heading">
-        <img class="wallet-coin-logo" src="img/icon-bitcoin.svg" width="18">
-        <span translate>Bitcoin Wallets</span>
+        <!-- <img class="wallet-coin-logo" src="img/icon-bitcoin.svg" width="18"> -->
+        <img class="wallet-coin-logo" src="img/app/coin-icon.png" width="18">
+        <span translate>Dinero Wallets</span>
         <a ui-sref="tabs.add"><i class="icon ion-ios-plus-empty list-add-button"></i></a>
       </div>
       <div>
+        <!-- <a ng-repeat="wallet in convertedWallets track by $index"
+           class="item item-sub item-icon-left item-big-icon-left item-icon-right wallet"
+           ng-click="openWallet(wallet)">
+          <span ng-include="'views/includes/walletList.html'"></span>
+        </a> -->
         <a ng-repeat="wallet in walletsBtc track by $index"
            class="item item-sub item-icon-left item-big-icon-left item-icon-right wallet"
            ng-click="openWallet(wallet)">
@@ -106,7 +114,7 @@
       </div>
     </div>
 
-    <div class="list card" ng-if="walletsBch[0]">
+    <!-- <div class="list card" ng-if="walletsBch[0]">
       <div class="item item-icon-right item-heading">
         <img class="wallet-coin-logo" src="img/bitcoin-cash-logo.svg" width="22">
         <span translate>Bitcoin Cash Wallets</span>
@@ -119,7 +127,7 @@
           <span ng-include="'views/includes/walletList.html'"></span>
         </a>
       </div>
-    </div>
+    </div> -->
 
     <div class="ng-hide list card" ng-show="walletsBtc[0] && bitpayCardItems.length>0" ng-include="'views/includes/bitpayCardsCard.html'"></div>
     <div class="ng-hide list card" ng-show="walletsBtc[0] && buyAndSellItems.length>0" ng-include="'views/includes/buyAndSellCard.html'"></div>

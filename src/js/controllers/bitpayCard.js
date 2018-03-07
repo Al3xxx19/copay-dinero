@@ -116,7 +116,8 @@ angular.module('copayApp.controllers').controller('bitpayCardController', functi
   };
 
   this.viewOnBlockchain = function(transactionId) {
-    var url = 'https://insight.bitpay.com/tx/' + transactionId;
+    // var url = 'https://insight.bitpay.com/tx/' + transactionId;
+    var url = 'https://insights.dinerocoin.org/insight/tx/' + transactionId;    
     var optIn = true;
     var title = null;
     var message = gettextCatalog.getString('View Transaction on Insight');

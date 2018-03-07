@@ -64,7 +64,7 @@ RateService.prototype.updateRates = function() {
           rate: currency.rate
         });
       });
-
+      
       return cb();
     }).error(function() {
       //log.debug('Error fetching exchange rates', err);
@@ -170,7 +170,7 @@ RateService.prototype.listAlternatives = function(sort) {
   return self.lodash.uniq(alternatives, 'isoCode');
 };
 
-angular.module('copayApp.services').factory('rateService', function($http, lodash) {
+angular.module('copayApp.services').service('rateService', function($http, lodash) {
   // var cfg = _.extend(config.rates, {
   //   httprequest: $http
   // });

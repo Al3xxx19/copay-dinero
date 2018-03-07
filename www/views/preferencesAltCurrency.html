@@ -21,7 +21,7 @@
     </div>
     <div class="list">
       <div class="item" ng-repeat="altCurrency in altCurrencyList" ng-value="altCurrency.isoCode" ng-model="currentCurrency"
-        ng-click="save(altCurrency)">{{altCurrency.name}} <span class="item-note">{{altCurrency.isoCode}}</span>
+        ng-click="save(altCurrency)" ng-if="altCurrency.isoCode != 'BCH'">{{altCurrency.name}} <span class="item-note">{{altCurrency.isoCode}}</span>
       </div>
     </div>
     <ion-infinite-scroll

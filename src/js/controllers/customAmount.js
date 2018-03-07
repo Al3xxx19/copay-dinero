@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('customAmountController', function($scope, $ionicHistory, txFormatService, platformInfo, configService, profileService, walletService, popupService) {
+angular.module('copayApp.controllers').controller('customAmountController', function($scope, $ionicHistory, txFormatService, platformInfo, configService, profileService, walletService, popupService, $http) {
 
   var showErrorAndBack = function(title, msg) {
     popupService.showAlert(title, msg, function() {
@@ -44,13 +44,42 @@ angular.module('copayApp.controllers').controller('customAmountController', func
         // Convert to BTC or BCH
         var config = configService.getSync().wallet.settings;
         var amountUnit = txFormatService.satToUnit(parsedAmount.amountSat);
-        var btcParsedAmount = txFormatService.parseAmount($scope.wallet.coin, amountUnit, $scope.wallet.coin);
 
-        $scope.amountBtc = btcParsedAmount.amount;
-        $scope.altAmountStr = btcParsedAmount.amountUnitStr;
+        /*$http.get('https://api.coinmarketcap.com/v1/ticker/dinero/').then(function (response) {
+          var value_object = response.data[0];
+          var din_to_btc = parseFloat(value_object.price_btc);*/
+		  $http.get('https://www.worldcoinindex.com/apiservice/ticker?key=11SnhXn6OwKcniX1eXrZk7cANPnc20&label=USDTBTC-DINBTC&fiat=btc').then(function (response) {
+			var value_usd = response.data.Markets[0];
+			var value_din = response.data.Markets[1];
+			din_to_btc = parseFloat(value_din.Price);
+			din_to_usd = din_to_btc / parseFloat(value_usd.Price);
+			
+            amountUnit = parseFloat(amountUnit / din_to_btc);
+            
+            // var btcParsedAmount = txFormatService.parseAmount($scope.wallet.coin, amountUnit, $scope.wallet.coin);
+            var btcParsedAmount = txFormatService.parseAmount($scope.coin, amountUnit, 'DIN');
+            
+            $scope.amountBtc = btcParsedAmount.amount;
+            $scope.altAmountStr = btcParsedAmount.amountUnitStr;
+
+        },function (err) {
+          conosle.log(err);
+        });
       } else {
-        $scope.amountBtc = amount; // BTC or BCH
-        $scope.altAmountStr = txFormatService.formatAlternativeStr($scope.wallet.coin, parsedAmount.amountSat);
+        /*$http.get('https://api.coinmarketcap.com/v1/ticker/dinero/').then(function (response) {
+          var value_object = response.data[0];
+          var din_to_btc = parseFloat(value_object.price_btc);*/
+		  $http.get('https://www.worldcoinindex.com/apiservice/ticker?key=11SnhXn6OwKcniX1eXrZk7cANPnc20&label=USDTBTC-DINBTC&fiat=btc').then(function (response) {
+			var value_usd = response.data.Markets[0];
+			var value_din = response.data.Markets[1];
+			din_to_btc = parseFloat(value_din.Price);
+			din_to_usd = din_to_btc / parseFloat(value_usd.Price);
+
+            $scope.amountBtc = parseFloat(amount / din_to_btc);;
+            // $scope.altAmountStr = txFormatService.formatAlternativeStr($scope.wallet.coin, parsedAmount.amountSat);
+
+            $scope.altAmountStr = txFormatService.formatAlternativeStr($scope.coin, parsedAmount.amountSat);
+        });
       }
     });
   });

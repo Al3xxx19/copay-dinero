@@ -2,9 +2,9 @@
   .icon-create-wallet {
     background-color: #4A90E2; // default wallet color
   }
-  .icon-buy-bitcoin {
-    background-image: $v-bitcoin-icon;
-    background-color: $v-bitcoin-orange;
+  .icon-buy-dinero {
+    background-image: $v-dinero-icon;
+    // background-color: $v-bitcoin-orange;
   }
   .icon-bitpay-card {
     background-image: url("../img/icon-card.svg");
@@ -64,6 +64,7 @@
   .wallet-coin-logo {
     vertical-align: middle;
     margin-right: 5px;
+    border-radius: 50%;
   }
   .wallet-details__item.item {
     padding-top: 0;
@@ -113,9 +114,10 @@
   }
   .tab-home {
     &__logo {
-      height: 18px;
+      height: 37px;
       position: relative;
       top: 3px;
+      border-radius: 4px;
     }
     &__wallet {
       &__multisig-number {

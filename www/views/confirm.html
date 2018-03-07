@@ -16,15 +16,15 @@
           <span translate ng-if="tx.sendMax">Sending maximum amount</span>
         </div>
         <div class="amount-label">
-          <div class="amount">{{tx.amountValueStr || '...'}} <span class="unit">{{tx.amountUnitStr}}</span></div>
+          <div class="amount">{{tx.amountValueStr || '...'}} <span class="unit">{{tx.amountUnitStr.replace('btc','dinero')}}</span></div>
           <div class="alternative">{{tx.alternativeAmountStr || '...'}}</div>
         </div>
       </div>
 
       <div class="info">
         <div class="item item-icon-right" ng-if="wallet" ng-click="chooseFeeLevel(tx, wallet)">
-          <span class="label">{{'Bitcoin miner fee:' | translate}} {{tx.feeLevelName | translate}}</span>
-            <span class="m10l">{{tx.txp[wallet.id].feeStr || '...'}}</span>
+          <span class="label">{{'Dinero miner fee:' | translate}} {{tx.feeLevelName | translate}}</span>
+            <span class="m10l">{{tx.txp[wallet.id].feeStr.replace('btc', 'dinero') || '...'}}</span>
             <span class="item-note m10l">
               <span>{{tx.txp[wallet.id].alternativeFeeStr || '...'}}&nbsp;
               <span class="fee-rate" ng-if="tx.txp[wallet.id].feeRatePerStr"> &middot;
@@ -54,7 +54,6 @@
 
             <div ng-if="tx.paypro" ng-click="openPPModal(tx.paypro)" class="m15l size-14 w100p pointer">
               <i ng-show="tx.paypro.verified && tx.paypro.caTrusted" class="ion-locked" style="color:green"></i>
-              <i ng-show="!tx.paypro.verified && tx.paypro.caTrusted" class="ion-unlocked" style="color:orange"></i>
               <i ng-show="!tx.paypro.caTrusted" class="ion-unlocked" style="color:red"></i>
               <span class="ellipsis" ng-show="!tx.toName">{{tx.paypro.domain || tx.paypro.toAddress}}</span>
               <span ng-show="tx.toName">{{tx.toName}}</span>
@@ -134,6 +133,13 @@
     <span ng-show="!wallet.canSign() && !wallet.isPrivKeyExternal()" translate>Transaction Created</span>
   </slide-to-accept-success>
 
+  <!-- <wallet-selector
+    wallet-selector-title="walletSelectorTitle"
+    wallet-selector-wallets="convertedWallets"
+    wallet-selector-selected-wallet="wallet"
+    wallet-selector-show="walletSelector"
+    wallet-selector-on-select="onWalletSelect">
+  </wallet-selector> -->
   <wallet-selector
     wallet-selector-title="walletSelectorTitle"
     wallet-selector-wallets="wallets"

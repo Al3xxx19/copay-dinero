@@ -1,6 +1,23 @@
 'use strict';
 
-angular.module('copayApp.services').factory('txFormatService', function($filter, bwcService, rateService, configService, bitcoreCash, lodash) {
+angular.module('copayApp.services').service('txFormatService', function($filter, bwcService, rateService, configService, bitcoreCash, lodash, $http) {
+
+  var din_to_usd;
+  var din_to_btc;
+  
+  /*$http.get('https://api.coinmarketcap.com/v1/ticker/dinero/').then(function (response) {
+    var value_object = response.data[0];
+    din_to_usd = parseFloat(value_object.price_usd);
+    din_to_btc = parseFloat(value_object.price_btc);*/
+	
+  $http.get('https://www.worldcoinindex.com/apiservice/ticker?key=11SnhXn6OwKcniX1eXrZk7cANPnc20&label=USDTBTC-DINBTC&fiat=btc').then(function (response) {
+    var value_usd = response.data.Markets[0];
+    var value_din = response.data.Markets[1];
+    din_to_btc = parseFloat(value_din.Price);
+    din_to_usd = din_to_btc / parseFloat(value_usd.Price);  	
+  },function (err) {
+    conosle.log(err);
+  });
   var root = {};
 
   root.Utils = bwcService.getUtils();
@@ -29,7 +46,8 @@ angular.module('copayApp.services').factory('txFormatService', function($filter,
 
   root.formatAmountStr = function(coin, satoshis) {
     if (isNaN(satoshis)) return;
-    return root.formatAmount(satoshis) + ' ' + (coin).toUpperCase();
+    // return root.formatAmount(satoshis) + ' ' + (coin).toUpperCase();
+    return root.formatAmount(satoshis) + ' ' + (coin);
   };
 
   root.toFiat = function(coin, satoshis, code, cb) {
@@ -77,7 +95,8 @@ angular.module('copayApp.services').factory('txFormatService', function($filter,
     var config = configService.getSync().wallet.settings;
 
     var val = function() {
-      var v1 = parseFloat((rateService.toFiat(satoshis, config.alternativeIsoCode, coin)).toFixed(2));
+      // var v1 = parseFloat((rateService.toFiat(satoshis, config.alternativeIsoCode, coin)).toFixed(2));
+      var v1 = parseFloat((rateService.toFiat(satoshis, config.alternativeIsoCode, coin) * din_to_btc).toFixed(8));
       v1 = $filter('formatFiatAmount')(v1);
       if (!v1) return null;
 
