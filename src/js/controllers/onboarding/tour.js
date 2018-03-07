@@ -42,12 +42,12 @@ angular.module('copayApp.controllers').controller('tourController',
 			
 			for (var i = 0; i < data.length; i++){
 			  if (data[i].Market == "DIN/BTC"){
-				din_to_btc = parseFloat(data[i].Last);
+				var din_to_btc = parseFloat(data[i].Last);
 			  }
 			}
 			for (var i = 0; i < data.length; i++){
 			  if (data[i].Market == "BTC/USD"){
-				din_to_usd = din_to_btc * parseFloat(data[i].Last);
+				var din_to_usd = din_to_btc * parseFloat(data[i].Last);
 			  }
 			}
 		  
