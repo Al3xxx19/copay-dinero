@@ -24,7 +24,7 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
       }
     } else {
       // blockexplorerUrl = 'insight.bitpay.com';
-      blockexplorerUrl = 'insights.dinerocoin.org';
+      blockexplorerUrl = 'insights.dinerocoin.org/insight';
     }
 
     txConfirmNotification.checkIfEnabled(txId, function(res) {

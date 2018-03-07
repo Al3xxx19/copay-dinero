@@ -70,7 +70,7 @@ angular.module('copayApp.services').service('configService', function(storageSer
     },
 
     rates: {
-      url: 'https://insights.dinerocoin.org/api/rates',
+      url: 'https://insights.dinerocoin.org/insight-api-dinero/currency',
     },
 
     release: {
