@@ -81,27 +81,27 @@ angular.module('copayApp.controllers').controller('walletDetailsController', fun
         if($scope.status) {
           // Available Balance
           if($scope.status.availableBalanceStr) {
-            $scope.status.availableBalanceStr = $scope.status.availableBalanceStr.replace('btc','dinero');
+            $scope.status.availableBalanceStr = $scope.status.availableBalanceStr.replace('btc','DIN');
           }
 
           // Total Balance
           if($scope.status.totalBalanceStr) {
-            $scope.status.totalBalanceStr = $scope.status.totalBalanceStr.replace('btc','dinero');
+            $scope.status.totalBalanceStr = $scope.status.totalBalanceStr.replace('btc','DIN');
           }
 
           // Locked Balance
           if($scope.status.lockedBalanceStr) {
-            $scope.status.lockedBalanceStr = $scope.status.lockedBalanceStr.replace('btc','dinero');
+            $scope.status.lockedBalanceStr = $scope.status.lockedBalanceStr.replace('btc','DIN');
           }
 
           // Pending Balance
           if($scope.status.pendingBalanceStr) {
-            $scope.status.pendingBalanceStr = $scope.status.pendingBalanceStr.replace('btc','dinero');
+            $scope.status.pendingBalanceStr = $scope.status.pendingBalanceStr.replace('btc','DIN');
           }
 
           // Spendable Balance
           if($scope.status.spendableBalanceStr) {
-            $scope.status.spendableBalanceStr = $scope.status.spendableBalanceStr.replace('btc','dinero');
+            $scope.status.spendableBalanceStr = $scope.status.spendableBalanceStr.replace('btc','DIN');
           }
         }
       }
@@ -220,7 +220,7 @@ angular.module('copayApp.controllers').controller('walletDetailsController', fun
       $scope.txHistory = $scope.completeTxHistory.slice(0, (currentTxHistoryPage + 1) * HISTORY_SHOW_LIMIT);
       $scope.txHistoryShowMore = $scope.completeTxHistory.length > $scope.txHistory.length;
       for(var i = 0 ; i < $scope.txHistory.length; i++) {
-        $scope.txHistory[i].amountStr = $scope.txHistory[i].amountStr.replace('btc','dinero');
+        $scope.txHistory[i].amountStr = $scope.txHistory[i].amountStr.replace('btc','DIN');
       }
     }
   };
@@ -389,7 +389,7 @@ angular.module('copayApp.controllers').controller('walletDetailsController', fun
       $scope.status = null;
     } else {
       $scope.status = $scope.wallet.cachedStatus;
-      $scope.status.totalBalanceStr = $scope.status.totalBalanceStr.replace('btc','dinero');
+      $scope.status.totalBalanceStr = $scope.status.totalBalanceStr.replace('btc','DIN');
 
       if ($scope.wallet.completeHistory) {
         $scope.completeTxHistory = $scope.wallet.completeHistory;

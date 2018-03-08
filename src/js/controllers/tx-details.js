@@ -138,10 +138,10 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
         if ($scope.btx.action == 'moved') $scope.title = gettextCatalog.getString('Moved Funds');
       }
 
-        $scope.btx.amountStr = $scope.btx.amountStr.replace('btc','dinero');
+        $scope.btx.amountStr = $scope.btx.amountStr.replace('btc','DIN');
         $scope.btx.amountValueStr = $scope.btx.amountStr.split(" ")[0];
         $scope.btx.amountUnitStr = $scope.btx.amountStr.split(" ")[1];
-        $scope.btx.feeStr = $scope.btx.feeStr.replace('btc','dinero');
+        $scope.btx.feeStr = $scope.btx.feeStr.replace('btc','DIN');
 
       updateMemo();
       initActionList();

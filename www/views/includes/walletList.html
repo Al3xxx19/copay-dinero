@@ -8,7 +8,7 @@
   </span>
   <span ng-if="wallet.isComplete()">
     <!-- <span ng-if="!wallet.balanceHidden  && !wallet.scanning && wallet.converted"> --> 
-      <span ng-if="!wallet.balanceHidden  && !wallet.scanning">{{wallet.cachedStatus.totalBalanceStr ? wallet.cachedStatus.totalBalanceStr.replace('btc','dinero') : ( wallet.cachedBalance ? wallet.cachedBalance.replace('btc','dinero')   + (wallet.cachedBalanceUpdatedOn ? ' &middot; ' + ( wallet.cachedBalanceUpdatedOn  * 1000 | amTimeAgo) : '') : ''  ) }} </span>
+      <span ng-if="!wallet.balanceHidden  && !wallet.scanning">{{wallet.cachedStatus.totalBalanceStr ? wallet.cachedStatus.totalBalanceStr.replace('btc','DIN') : ( wallet.cachedBalance ? wallet.cachedBalance.replace('btc','DIN')   + (wallet.cachedBalanceUpdatedOn ? ' &middot; ' + ( wallet.cachedBalanceUpdatedOn  * 1000 | amTimeAgo) : '') : ''  ) }} </span>
     <span ng-if="wallet.scanning" translate> Scanning funds... </span>
 
     <span ng-if="wallet.balanceHidden && !wallet.scanning" translate>[Balance Hidden]</span>
