@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('copayApp.services')
-  .service('localStorageService', function(platformInfo, $timeout, $log, lodash) {
+  .factory('localStorageService', function(platformInfo, $timeout, $log, lodash) {
     var isNW = platformInfo.isNW;
     var isChromeApp = platformInfo.isChromeApp;
     var root = {};

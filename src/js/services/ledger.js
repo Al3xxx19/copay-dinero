@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('copayApp.services')
-  .service('ledger', function($log, bwcService, gettext, hwWallet, platformInfo) {
+  .factory('ledger', function($log, bwcService, gettext, hwWallet, platformInfo) {
     var root = {};
     var LEDGER_CHROME_ID = "kkdpmhnladdopljabkgpacgpliggeeaf";
 

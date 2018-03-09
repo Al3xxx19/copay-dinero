@@ -1,15 +1,16 @@
 'use strict';
 
-angular.module('copayApp.services').service('payproService',
+angular.module('copayApp.services').factory('payproService',
   function(profileService, platformInfo, gettextCatalog, ongoingProcess, $log) {
 
     var ret = {};
 
-    ret.getPayProDetails = function(uri, cb, disableLoader) {
+    ret.getPayProDetails = function(uri, coin, cb, disableLoader) {
       if (!cb) cb = function() {};
 
       var wallet = profileService.getWallets({
-        onlyComplete: true
+        onlyComplete: true,
+        coin: coin
       })[0];
 
       if (!wallet) return cb();
@@ -26,7 +27,7 @@ angular.module('copayApp.services').service('payproService',
         payProUrl: uri,
       }, function(err, paypro) {
         if (!disableLoader) ongoingProcess.set('fetchingPayPro', false);
-        if (err) return cb(err);
+        if (err) return cb(gettextCatalog.getString('Could Not Fetch Payment: Check if it is still valid'));
         else if (!paypro.verified) {
           $log.warn('Failed to verify payment protocol signatures');
           return cb(gettextCatalog.getString('Payment Protocol Invalid'));

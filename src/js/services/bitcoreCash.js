@@ -1,6 +1,6 @@
 'use strict';
 angular.module('copayApp.services')
-  .service('bitcoreCash', function bitcoreFactory(bwcService) {
+  .factory('bitcoreCash', function bitcoreFactory(bwcService) {
     var bitcoreCash = bwcService.getBitcoreCash();
     return bitcoreCash;
   });

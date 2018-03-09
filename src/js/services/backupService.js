@@ -1,6 +1,6 @@
 'use strict';
 angular.module('copayApp.services')
-  .service('backupService', function backupServiceFactory($log, $timeout, $stateParams, profileService, sjcl, appConfigService) {
+  .factory('backupService', function backupServiceFactory($log, $timeout, $stateParams, profileService, sjcl, appConfigService) {
 
     var root = {};
 

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('copayApp.services')
-  .service('fileStorageService', function(lodash, $log) {
+  .factory('fileStorageService', function(lodash, $log) {
     var root = {},
       _fs, _dir;
 

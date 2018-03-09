@@ -1,5 +1,5 @@
 'use strict';
-angular.module('copayApp.services').service('mercadoLibreService', function($http, $log, lodash, moment, storageService, configService, platformInfo, nextStepsService, homeIntegrationsService) {
+angular.module('copayApp.services').factory('mercadoLibreService', function($http, $log, lodash, moment, storageService, configService, platformInfo, nextStepsService, homeIntegrationsService) {
   var root = {};
   var credentials = {};
 
@@ -106,7 +106,8 @@ angular.module('copayApp.services').service('mercadoLibreService', function($htt
       currency: data.currency,
       amount: data.amount,
       clientId: data.uuid,
-      email: data.email
+      email: data.email,
+      buyerSelectedTransactionCurrency: data.buyerSelectedTransactionCurrency
     };
 
     $http(_postBitPay('/mercado-libre-gift/pay', dataSrc)).then(function(data) {
@@ -173,7 +174,7 @@ angular.module('copayApp.services').service('mercadoLibreService', function($htt
       if (giftCards) {
         homeIntegrationsService.register(homeItem);
       } else {
-        // nextStepsService.register(nextStepItem);
+        nextStepsService.register(nextStepItem);
       }
     });
   };

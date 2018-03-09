@@ -1,6 +1,6 @@
 'use strict';
 angular.module('copayApp.services')
-  .service('uxLanguage', function languageService($log, lodash, gettextCatalog, amMoment, configService) {
+  .factory('uxLanguage', function languageService($log, lodash, gettextCatalog, amMoment, configService) {
     var root = {};
 
     root.currentLanguage = null;
