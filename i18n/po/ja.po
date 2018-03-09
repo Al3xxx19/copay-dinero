@@ -90,8 +90,8 @@ msgid "Add Account"
 msgstr "アカウントを追加"
 
 #: src/js/services/bitpayAccountService.js:69
-msgid "Add Dinero Account?"
-msgstr "Dinero アカウントを追加しますか？"
+msgid "Add Dinero Dev Account?"
+msgstr "Dinero Dev アカウントを追加しますか？"
 
 #: www/views/addressbook.add.html:4
 #: www/views/addressbook.html:22
@@ -135,7 +135,7 @@ msgid "Add funds"
 msgstr "資金を追加"
 
 #: src/js/services/bitpayAccountService.js:78
-msgid "Add this Dinero account ({{email}})?"
+msgid "Add this Dinero Dev account ({{email}})?"
 msgstr "このDinero Devアカウント ({{email}}) を追加しますか？"
 
 #: www/views/add.html:3
@@ -271,13 +271,13 @@ msgid "Are you sure you want to skip it?"
 msgstr "本当にバックアップの手順を飛ばしても良いですか？"
 
 #: www/views/modals/bitpay-card-confirmation.html:4
-msgid "Are you sure you would like to log out of your Dinero Card account?"
+msgid "Are you sure you would like to log out of your Dinero Dev Card account?"
 msgstr "Dinero Devカードアカウントからログアウトしてもよろしいですか?"
 
 #: src/js/controllers/preferencesBitpayCard.js:7
 #: src/js/controllers/preferencesBitpayServices.js:20
-msgid "Are you sure you would like to remove your Dinero Card ({{lastFourDigits}}) from this device?"
-msgstr "この端末から Dinero カード ({{lastFourDigits}}) を本当に削除してもよろしいですか？"
+msgid "Are you sure you would like to remove your Dinero Dev Card ({{lastFourDigits}}) from this device?"
+msgstr "この端末から Dinero Dev カード ({{lastFourDigits}}) を本当に削除してもよろしいですか？"
 
 #: www/views/includes/walletInfo.html:10
 msgid "Auditable"
@@ -351,7 +351,7 @@ msgid "Be sure to store your recovery phrase in a secure place. If this app is d
 msgstr "書き留めた復元フレーズは金庫など、安全な場所にて保管して下さい。このアプリが削除されたら、復元フレーズが必須になってきます。"
 
 #: www/views/preferencesBitpayServices.html:9
-msgid "Dinero Visa&reg; Cards"
+msgid "Dinero Dev Visa&reg; Cards"
 msgstr "Dinero DevのVISA&reg; カード"
 
 #: www/views/addressbook.add.html:38
@@ -595,8 +595,8 @@ msgid "Confirming"
 msgstr "承認中"
 
 #: www/views/bitpayCardIntro.html:37
-msgid "Connect my Dinero Card"
-msgstr "Dinero カードを接続"
+msgid "Connect my Dinero Dev Card"
+msgstr "Dinero Dev カードを接続"
 
 #: src/js/services/onGoingProcess.js:13
 msgid "Connecting to Coinbase..."
@@ -987,8 +987,8 @@ msgid "Enter Spending Password"
 msgstr "送金時のパスワード入力して下さい。"
 
 #: src/js/services/bitpayAccountService.js:110
-msgid "Enter Two Factor for your Dinero account"
-msgstr "Dinero アカウントの2段階認証コードを入力して下さい"
+msgid "Enter Two Factor for your Dinero Dev account"
+msgstr "Dinero Dev アカウントの2段階認証コードを入力して下さい"
 
 #: www/views/amount.html:4
 msgid "Enter amount"
@@ -1123,7 +1123,7 @@ msgid "Error in Payment Protocol"
 msgstr "支払い検証のエラー"
 
 #: src/js/controllers/bitpayCardIntro.js:14
-msgid "Error pairing Dinero Account"
+msgid "Error pairing Dinero Dev Account"
 msgstr "Bitpayアカウントを接続中にエラー"
 
 #: src/js/controllers/paperWallet.js:41
@@ -1221,8 +1221,8 @@ msgid "Feedback could not be submitted. Please try again later."
 msgstr "フォームを送信する事ができませんでした。時間をおいて再試行ください。"
 
 #: src/js/services/onGoingProcess.js:42
-msgid "Fetching Dinero Account..."
-msgstr "Dinero アカウントを取得..."
+msgid "Fetching Dinero Dev Account..."
+msgstr "Dinero Dev アカウントを取得..."
 
 #: src/js/services/onGoingProcess.js:21
 msgid "Fetching payment information"
@@ -1263,7 +1263,7 @@ msgid "From"
 msgstr "送信者"
 
 #: src/js/controllers/bitpayCardIntro.js:71
-msgid "From Dinero account"
+msgid "From Dinero Dev account"
 msgstr " Dinero Devアカウントから"
 
 #: www/views/tab-import-phrase.html:57
@@ -1315,8 +1315,8 @@ msgid "Get local cash anywhere you go, from any Visa<sup>&reg;</sup> compatible 
 msgstr "Visa<sup>&reg;</sup>カード対応ATMから現地通貨をいつでも引き出せます。ATMの手数料はATMによって異なります。"
 
 #: www/views/onboarding/collectEmail.html:15
-msgid "Get news and updates from Dinero"
-msgstr "Dinero からのニュースや更新情報を受け取ります。"
+msgid "Get news and updates from Dinero Dev"
+msgstr "Dinero Dev からのニュースや更新情報を受け取ります。"
 
 #: www/views/bitpayCard.html:49
 msgid "Get started"
@@ -1502,7 +1502,7 @@ msgid "If enabled, wallets will also try to spend unconfirmed funds. This option
 msgstr "有効にした場合、ウォレットは未承認ビットコインも送金時の候補に含めます。これを有効にした場合、承認に時間がかかることがあります。"
 
 #: src/js/controllers/onboarding/backupRequest.js:18
-msgid "If this device is replaced or this app is deleted, neither you nor Dinero can recover your funds without a backup."
+msgid "If this device is replaced or this app is deleted, neither you nor Dinero Dev can recover your funds without a backup."
 msgstr "この端末の機種変更をしたり、アプリを削除したりした場合、端末のバックアップを取っていてもビットコインは復元されません。Dinero Devは復元フレーズを知らないため、お金を失ったことになります。なので、絶対に復元フレーズを書き留めて安全な場所に保管して下さい。"
 
 #: www/views/feedback/complete.html:23
@@ -1933,7 +1933,7 @@ msgid "Not enough funds for fee"
 msgstr "手数料含めたら残高が不足しています。"
 
 #: www/views/onboarding/tour.html:50
-msgid "Not even Dinero can access it."
+msgid "Not even Dinero Dev can access it."
 msgstr "Dinero Devは管理できない。"
 
 #: src/js/controllers/paperWallet.js:47
@@ -2067,8 +2067,8 @@ msgid "Open website"
 msgstr "サイトを開く"
 
 #: www/views/bitpayCardIntro.html:34
-msgid "Order the Dinero Card"
-msgstr "Dinero カードを申し込み"
+msgid "Order the Dinero Dev Card"
+msgstr "Dinero Dev カードを申し込み"
 
 #: www/views/join.html:105
 #: www/views/join.html:96
@@ -2406,16 +2406,16 @@ msgid "Remove"
 msgstr "削除"
 
 #: src/js/controllers/preferencesBitpayServices.js:7
-msgid "Remove Dinero Account?"
-msgstr "Dinero アカウントの接続を解除しますか？"
+msgid "Remove Dinero Dev Account?"
+msgstr "Dinero Dev アカウントの接続を解除しますか？"
 
 #: src/js/controllers/preferencesBitpayServices.js:19
-msgid "Remove Dinero Card?"
-msgstr "Dinero カードを削除しますか？"
+msgid "Remove Dinero Dev Card?"
+msgstr "Dinero Dev カードを削除しますか？"
 
 #: src/js/controllers/preferencesBitpayServices.js:8
-msgid "Removing your Dinero account will remove all associated Dinero account data from this device. Are you sure you would like to remove your Dinero Account ({{email}}) from this device?"
-msgstr "Dinero アカウントを削除すると、このデバイスからすべての関連付けられている Dinero のアカウントデータが削除されます。本当にこのデバイスから Dinero アカウント ({{email}}) を削除してもよろしいですか。"
+msgid "Removing your Dinero Dev account will remove all associated Dinero Dev account data from this device. Are you sure you would like to remove your Dinero Dev Account ({{email}}) from this device?"
+msgstr "Dinero Dev アカウントを削除すると、このデバイスからすべての関連付けられている Dinero Dev のアカウントデータが削除されます。本当にこのデバイスから Dinero Dev アカウント ({{email}}) を削除してもよろしいですか。"
 
 #: www/views/join.html:116
 #: www/views/join.html:124
@@ -2891,8 +2891,8 @@ msgid "The maximum number of consecutive unused addresses (20) has been reached.
 msgstr "連続未使用アドレスの上限(20)に達しました。どれかにアドレスにビットコインが少量でも入れば再び受取画面にて新しいアドレスを生成することができるようになります。"
 
 #: src/js/controllers/onboarding/terms.js:21
-msgid "The official English Terms of Service are available on the Dinero website."
-msgstr "英語公式の規約は Dinero のウェブサイトにてご覧いただけます。"
+msgid "The official English Terms of Service are available on the Dinero Dev website."
+msgstr "英語公式の規約は Dinero Dev のウェブサイトにてご覧いただけます。"
 
 #: www/views/tab-import-phrase.html:4
 msgid "The password of the recovery phrase (if set)"
@@ -3012,7 +3012,7 @@ msgid "To get started, you'll need to create a dinero wallet and get some dinero
 msgstr "はじめに、ビットコインウォレットを作成し、ビットコインを入手する必要があります。"
 
 #: src/js/services/bitpayAccountService.js:73
-msgid "To {{reason}} you must first add your Dinero account - {{email}}"
+msgid "To {{reason}} you must first add your Dinero Dev account - {{email}}"
 msgstr "{{reason}}：その前にDinero Devアカウントを追加する必要があります - {{email}}"
 
 #: src/js/services/onGoingProcess.js:48
@@ -3210,7 +3210,7 @@ msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "警告: 信頼されていない証明書"
 
 #: www/views/preferencesPrivateKey.html:14
-msgid "WARNING: Your extended private keys are all that is needed to access your dinero funds. Be sure to protect your private keys and store them only on secure devices. Dinero does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
+msgid "WARNING: Your extended private keys are all that is needed to access your dinero funds. Be sure to protect your private keys and store them only on secure devices. Dinero Dev does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
 msgstr "注意： 拡張秘密鍵だけでビットコインをすべて送金できてしまいます。秘密鍵を守り、安全な端末のみにて管理して下さい。Dinero Devは秘密鍵へのアクセスができないので、管理する責任は全て自己責任になります。外部のサービスにこの鍵を共有する場合、窃盗などのリスクを全て受け入れた上で宜しくお願いします。拡張秘密鍵を直接扱うのは上級者のユーザーのみです。"
 
 #: src/js/services/onGoingProcess.js:15
@@ -3491,7 +3491,7 @@ msgid "You should not set a fee higher than {{maxFeeRecommended}} satoshis/byte.
 msgstr "{{maxFeeRecommended}} satoshis/byte より高い手数料を設定しない方が良いです。"
 
 #: www/views/modals/bitpay-card-confirmation.html:5
-msgid "You will need to log back for fill in your Dinero Card."
+msgid "You will need to log back for fill in your Dinero Dev Card."
 msgstr "Dinero Devカードに入金するためにログインする必要があります。"
 
 #: www/views/preferencesNotifications.html:34
@@ -3499,7 +3499,7 @@ msgid "You'll receive email notifications about payments sent and received from 
 msgstr "メールアドレスにウォレットへの入金や出金に関する通知が送られます。"
 
 #: www/views/bitpayCard.html:50
-msgid "Your Dinero Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
+msgid "Your Dinero Dev Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
 msgstr "Dinero Devカードの準備が整いました。入金して全世界のお店やATMでご利用下さい。"
 
 #: www/views/mercadoLibre.html:57
@@ -3568,8 +3568,8 @@ msgid "[Scanning Funds]"
 msgstr "[確認中]"
 
 #: src/js/controllers/bitpayCardIntro.js:11
-msgid "add your Dinero Visa card(s)"
-msgstr "Dinero VISAカードを追加します"
+msgid "add your Dinero Dev Visa card(s)"
+msgstr "Dinero Dev VISAカードを追加します"
 
 #: www/views/includes/available-balance.html:8
 msgid "locked by pending payments"
@@ -3600,7 +3600,7 @@ msgid "{{amountStr}} for Mercado Livre Brazil Gift Card"
 msgstr "{{amountStr}} を Mercado Livre Brazil ギフトカードに"
 
 #: www/views/preferencesBwsUrl.html:21
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://walletapi.dinerocoin.org (Dinero's public BWS instance)."
+msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://walletapi.dinerocoin.org (Dinero Dev's public BWS instance)."
 msgstr "{{appName}}はブロックチェーンの情報を取得したり参加者を同期させたりするためにBitcore Wallet Service (BWS)に依存します。初期値としてDinero Dev社が提供する https://walletapi.dinerocoin.org (Dinero Dev公式のBWSサーバー)を設定していますが、独自で運用してウォレットをそちらに接続しても構いません。"
 
 #: src/js/controllers/confirm.js:408

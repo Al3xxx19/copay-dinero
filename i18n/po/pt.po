@@ -90,8 +90,8 @@ msgid "Add Account"
 msgstr "Adicionar conta"
 
 #: src/js/services/bitpayAccountService.js:69
-msgid "Add Dinero Account?"
-msgstr "Adicionar conta Dinero?"
+msgid "Add Dinero Dev Account?"
+msgstr "Adicionar conta Dinero Dev?"
 
 #: www/views/addressbook.add.html:4
 #: www/views/addressbook.html:22
@@ -135,8 +135,8 @@ msgid "Add funds"
 msgstr "Adicionar fundos"
 
 #: src/js/services/bitpayAccountService.js:78
-msgid "Add this Dinero account ({{email}})?"
-msgstr "Adicionar esta conta Dinero ({{email}})?"
+msgid "Add this Dinero Dev account ({{email}})?"
+msgstr "Adicionar esta conta Dinero Dev ({{email}})?"
 
 #: www/views/add.html:3
 msgid "Add wallet"
@@ -269,13 +269,13 @@ msgid "Are you sure you want to skip it?"
 msgstr "Tem a certeza que deseja ignorar?"
 
 #: www/views/modals/bitpay-card-confirmation.html:4
-msgid "Are you sure you would like to log out of your Dinero Card account?"
-msgstr "Tem certeza que você deseja sair da sua conta do Dinero Card?"
+msgid "Are you sure you would like to log out of your Dinero Dev Card account?"
+msgstr "Tem certeza que você deseja sair da sua conta do Dinero Dev Card?"
 
 #: src/js/controllers/preferencesBitpayCard.js:7
 #: src/js/controllers/preferencesBitpayServices.js:20
-msgid "Are you sure you would like to remove your Dinero Card ({{lastFourDigits}}) from this device?"
-msgstr "Tem a certeza de que quer remover o seu Cartão Dinero ({{lastFourDigits}}) deste dispositivo?"
+msgid "Are you sure you would like to remove your Dinero Dev Card ({{lastFourDigits}}) from this device?"
+msgstr "Tem a certeza de que quer remover o seu Cartão Dinero Dev ({{lastFourDigits}}) deste dispositivo?"
 
 #: www/views/includes/walletInfo.html:10
 msgid "Auditable"
@@ -349,8 +349,8 @@ msgid "Be sure to store your recovery phrase in a secure place. If this app is d
 msgstr "Certifique-se de armazenar a sua frase de recuperação num lugar seguro. Se esta aplicação for eliminada o seu dinheiro não pode ser recuperado sem ela."
 
 #: www/views/preferencesBitpayServices.html:9
-msgid "Dinero Visa&reg; Cards"
-msgstr "Cartões Dinero Visa&reg"
+msgid "Dinero Dev Visa&reg; Cards"
+msgstr "Cartões Dinero Dev Visa&reg"
 
 #: www/views/addressbook.add.html:38
 #: www/views/includes/incomingDataMenu.html:29
@@ -593,8 +593,8 @@ msgid "Confirming"
 msgstr "A confirmar"
 
 #: www/views/bitpayCardIntro.html:37
-msgid "Connect my Dinero Card"
-msgstr "Introduzir o meu cartão do Dinero"
+msgid "Connect my Dinero Dev Card"
+msgstr "Introduzir o meu cartão do Dinero Dev"
 
 #: src/js/services/onGoingProcess.js:13
 msgid "Connecting to Coinbase..."
@@ -985,8 +985,8 @@ msgid "Enter Spending Password"
 msgstr "Inserir senha de compra"
 
 #: src/js/services/bitpayAccountService.js:110
-msgid "Enter Two Factor for your Dinero account"
-msgstr "Insira verificação dois passos para sua conta Dinero"
+msgid "Enter Two Factor for your Dinero Dev account"
+msgstr "Insira verificação dois passos para sua conta Dinero Dev"
 
 #: www/views/amount.html:4
 msgid "Enter amount"
@@ -1121,8 +1121,8 @@ msgid "Error in Payment Protocol"
 msgstr "Erro no Protocolo de Pagamento"
 
 #: src/js/controllers/bitpayCardIntro.js:14
-msgid "Error pairing Dinero Account"
-msgstr "Erro de emparelhamento na Conta Dinero"
+msgid "Error pairing Dinero Dev Account"
+msgstr "Erro de emparelhamento na Conta Dinero Dev"
 
 #: src/js/controllers/paperWallet.js:41
 msgid "Error scanning funds:"
@@ -1219,8 +1219,8 @@ msgid "Feedback could not be submitted. Please try again later."
 msgstr "Comentário pode não ter sido enviado. Por favor, tente novamente mais tarde."
 
 #: src/js/services/onGoingProcess.js:42
-msgid "Fetching Dinero Account..."
-msgstr "Buscando Conta Dinero..."
+msgid "Fetching Dinero Dev Account..."
+msgstr "Buscando Conta Dinero Dev..."
 
 #: src/js/services/onGoingProcess.js:21
 msgid "Fetching payment information"
@@ -1261,8 +1261,8 @@ msgid "From"
 msgstr "De"
 
 #: src/js/controllers/bitpayCardIntro.js:71
-msgid "From Dinero account"
-msgstr "De conta Dinero"
+msgid "From Dinero Dev account"
+msgstr "De conta Dinero Dev"
 
 #: www/views/tab-import-phrase.html:57
 msgid "From Hardware Wallet"
@@ -1313,8 +1313,8 @@ msgid "Get local cash anywhere you go, from any Visa<sup>&reg;</sup> compatible 
 msgstr "Sacar dinheiro em qualquer lugar que você vá, de qualquer Caixa Eletrônico Visa<sup>&reg;</sup> compatível. Tarifas bancárias podem ser geradas."
 
 #: www/views/onboarding/collectEmail.html:15
-msgid "Get news and updates from Dinero"
-msgstr "Receba notícias e atualizações da Dinero"
+msgid "Get news and updates from Dinero Dev"
+msgstr "Receba notícias e atualizações da Dinero Dev"
 
 #: www/views/bitpayCard.html:49
 msgid "Get started"
@@ -1500,8 +1500,8 @@ msgid "If enabled, wallets will also try to spend unconfirmed funds. This option
 msgstr "Se habilitado, as carteiras irão tentar gastar fundos não confirmados. Está opção pode causar atrasos de transações."
 
 #: src/js/controllers/onboarding/backupRequest.js:18
-msgid "If this device is replaced or this app is deleted, neither you nor Dinero can recover your funds without a backup."
-msgstr "Se esse dispositivo é substituído ou este aplicativo deletado, nem você nem a Dinero poderá recuperar seus fundos sem um backup."
+msgid "If this device is replaced or this app is deleted, neither you nor Dinero Dev can recover your funds without a backup."
+msgstr "Se esse dispositivo é substituído ou este aplicativo deletado, nem você nem a Dinero Dev poderá recuperar seus fundos sem um backup."
 
 #: www/views/feedback/complete.html:23
 msgid "If you have additional feedback, please let us know by tapping the \"Send feedback\" option in the Settings tab."
@@ -1931,7 +1931,7 @@ msgid "Not enough funds for fee"
 msgstr "Não há fundos para taxa"
 
 #: www/views/onboarding/tour.html:50
-msgid "Not even Dinero can access it."
+msgid "Not even Dinero Dev can access it."
 msgstr "Nem mesmo Bitpay pode acessar isso."
 
 #: src/js/controllers/paperWallet.js:47
@@ -2065,7 +2065,7 @@ msgid "Open website"
 msgstr "Abrir página da Web"
 
 #: www/views/bitpayCardIntro.html:34
-msgid "Order the Dinero Card"
+msgid "Order the Dinero Dev Card"
 msgstr "Solicitar o Cartão Bitpay"
 
 #: www/views/join.html:105
@@ -2404,16 +2404,16 @@ msgid "Remove"
 msgstr "Remover"
 
 #: src/js/controllers/preferencesBitpayServices.js:7
-msgid "Remove Dinero Account?"
-msgstr "Remover conta do Dinero?"
+msgid "Remove Dinero Dev Account?"
+msgstr "Remover conta do Dinero Dev?"
 
 #: src/js/controllers/preferencesBitpayServices.js:19
-msgid "Remove Dinero Card?"
-msgstr "Remover cartão do Dinero?"
+msgid "Remove Dinero Dev Card?"
+msgstr "Remover cartão do Dinero Dev?"
 
 #: src/js/controllers/preferencesBitpayServices.js:8
-msgid "Removing your Dinero account will remove all associated Dinero account data from this device. Are you sure you would like to remove your Dinero Account ({{email}}) from this device?"
-msgstr "Remover sua conta Dinero removerá todos os dados da conta associada ao Dinero neste dispositivo. Tem certeza que quer remover sua conta Dinero ({{email}}) deste dispositivo?"
+msgid "Removing your Dinero Dev account will remove all associated Dinero Dev account data from this device. Are you sure you would like to remove your Dinero Dev Account ({{email}}) from this device?"
+msgstr "Remover sua conta Dinero Dev removerá todos os dados da conta associada ao Dinero Dev neste dispositivo. Tem certeza que quer remover sua conta Dinero Dev ({{email}}) deste dispositivo?"
 
 #: www/views/join.html:116
 #: www/views/join.html:124
@@ -2887,8 +2887,8 @@ msgid "The maximum number of consecutive unused addresses (20) has been reached.
 msgstr "O número máximo de endereços não utilizados consecutivos (20) foi atingido. Quando um de seus endereços não utilizados recebe um pagamento, um novo endereço será gerado e mostrado na sua guia Receber."
 
 #: src/js/controllers/onboarding/terms.js:21
-msgid "The official English Terms of Service are available on the Dinero website."
-msgstr "Os Termos de Serviço oficiais estão disponíveis no site Dinero."
+msgid "The official English Terms of Service are available on the Dinero Dev website."
+msgstr "Os Termos de Serviço oficiais estão disponíveis no site Dinero Dev."
 
 #: www/views/tab-import-phrase.html:4
 msgid "The password of the recovery phrase (if set)"
@@ -3006,8 +3006,8 @@ msgid "To get started, you'll need to create a dinero wallet and get some dinero
 msgstr "Para começar, você precisa criar uma carteira de dineros e obter alguns dineros."
 
 #: src/js/services/bitpayAccountService.js:73
-msgid "To {{reason}} you must first add your Dinero account - {{email}}"
-msgstr "Para {{reason}} você deve primeiro adicionar sua conta Dinero - {{email}}"
+msgid "To {{reason}} you must first add your Dinero Dev account - {{email}}"
+msgstr "Para {{reason}} você deve primeiro adicionar sua conta Dinero Dev - {{email}}"
 
 #: src/js/services/onGoingProcess.js:48
 msgid "Top up in progress..."
@@ -3204,8 +3204,8 @@ msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "AVISO: CERTIFICADO NÃO CONFIÁVEL"
 
 #: www/views/preferencesPrivateKey.html:14
-msgid "WARNING: Your extended private keys are all that is needed to access your dinero funds. Be sure to protect your private keys and store them only on secure devices. Dinero does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
-msgstr "Aviso: Suas chaves privadas estendidas são tudo que é necessário para acessar seus fundos dinero. Certifique-se de proteger suas chaves privadas e armazená-las somente em dispositivos seguros. Dinero não tem acesso às suas chaves privadas, então você é responsável pelas suas chaves. Se você compartilhar a chave de acesso com serviços externos, responsabilize-se pelo risco de roubo ou violação. Apenas usuários avançados devem lidar com chaves privadas estendidas diretamente."
+msgid "WARNING: Your extended private keys are all that is needed to access your dinero funds. Be sure to protect your private keys and store them only on secure devices. Dinero Dev does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
+msgstr "Aviso: Suas chaves privadas estendidas são tudo que é necessário para acessar seus fundos dinero. Certifique-se de proteger suas chaves privadas e armazená-las somente em dispositivos seguros. Dinero Dev não tem acesso às suas chaves privadas, então você é responsável pelas suas chaves. Se você compartilhar a chave de acesso com serviços externos, responsabilize-se pelo risco de roubo ou violação. Apenas usuários avançados devem lidar com chaves privadas estendidas diretamente."
 
 #: src/js/services/onGoingProcess.js:15
 msgid "Waiting for Ledger..."
@@ -3485,16 +3485,16 @@ msgid "You should not set a fee higher than {{maxFeeRecommended}} satoshis/byte.
 msgstr "Você não deve definir uma taxa maior do que {{maxFeeRecommended}} satoshis/byte."
 
 #: www/views/modals/bitpay-card-confirmation.html:5
-msgid "You will need to log back for fill in your Dinero Card."
-msgstr "Você precisará entrar de novo para completar seu Dinero Card."
+msgid "You will need to log back for fill in your Dinero Dev Card."
+msgstr "Você precisará entrar de novo para completar seu Dinero Dev Card."
 
 #: www/views/preferencesNotifications.html:34
 msgid "You'll receive email notifications about payments sent and received from your wallets."
 msgstr "Você receberá notificações por e-mail sobre pagamentos enviados e recebidos de suas carteiras."
 
 #: www/views/bitpayCard.html:50
-msgid "Your Dinero Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
-msgstr "Seu Dinero Card está pronto. Adicione fundos ao seu cartão para começar a usá-lo em lojas e caixas eletrônicos em todo o mundo."
+msgid "Your Dinero Dev Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
+msgstr "Seu Dinero Dev Card está pronto. Adicione fundos ao seu cartão para começar a usá-lo em lojas e caixas eletrônicos em todo o mundo."
 
 #: www/views/mercadoLibre.html:57
 #: www/views/mercadoLibreCards.html:6
@@ -3562,8 +3562,8 @@ msgid "[Scanning Funds]"
 msgstr "[Pesquisando fundos]"
 
 #: src/js/controllers/bitpayCardIntro.js:11
-msgid "add your Dinero Visa card(s)"
-msgstr "Adicionar seu(s) cartão(ões) Dinero Visa"
+msgid "add your Dinero Dev Visa card(s)"
+msgstr "Adicionar seu(s) cartão(ões) Dinero Dev Visa"
 
 #: www/views/includes/available-balance.html:8
 msgid "locked by pending payments"
@@ -3594,8 +3594,8 @@ msgid "{{amountStr}} for Mercado Livre Brazil Gift Card"
 msgstr "{{amountStr}} em Vale-Presente do Mercado Livre Brasil"
 
 #: www/views/preferencesBwsUrl.html:21
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://walletapi.dinerocoin.org (Dinero's public BWS instance)."
-msgstr "{{appName}} depende do Bitcore Wallet Service (BWS) para informações sobre cadeias de blocos, rede e sincronização Copayer. A configuração padrão aponta para https://walletapi.dinerocoin.org (instância pública BWS do Dinero)."
+msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://walletapi.dinerocoin.org (Dinero Dev's public BWS instance)."
+msgstr "{{appName}} depende do Bitcore Wallet Service (BWS) para informações sobre cadeias de blocos, rede e sincronização Copayer. A configuração padrão aponta para https://walletapi.dinerocoin.org (instância pública BWS do Dinero Dev)."
 
 #: src/js/controllers/confirm.js:408
 msgid "{{fee}} will be deducted for dinero networking fees."
