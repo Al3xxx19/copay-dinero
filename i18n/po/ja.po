@@ -3621,3 +3621,6 @@ msgstr "{{updatingTxHistoryProgress}} 個の取引ダウンロード済み"
 msgid "{{wallet.m}}-of-{{wallet.n}}"
 msgstr "{{wallet.m}}-of-{{wallet.n}}"
 
+#: src/js/profileService.js:522
+msgid "Are you sure?"
+msgstr "本気ですか？"

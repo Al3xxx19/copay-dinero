@@ -3619,3 +3619,6 @@ msgstr "{{updatingTxHistoryProgress}} transactions téléchargées"
 msgid "{{wallet.m}}-of-{{wallet.n}}"
 msgstr "{{wallet.m}}-sur-{{wallet.n}}"
 
+#: src/js/profileService.js:522
+msgid "Are you sure?"
+msgstr "Êtes-vous certain(e)?"

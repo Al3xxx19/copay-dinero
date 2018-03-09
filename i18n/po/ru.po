@@ -3615,3 +3615,6 @@ msgstr "{{updatingTxHistoryProgress}} транзакций загружено"
 msgid "{{wallet.m}}-of-{{wallet.n}}"
 msgstr "{{wallet.m}}-из-{{wallet.n}}"
 
+#: src/js/profileService.js:522
+msgid "Are you sure?"
+msgstr "Ты уверен?"
