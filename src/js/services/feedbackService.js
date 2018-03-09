@@ -1,7 +1,7 @@
 'use strict';
 angular.module('copayApp.services').service('feedbackService', function($http, $log, $httpParamSerializer, configService) {
   var root = {};
-  var URL = "https://script.google.com/macros/s/AKfycbybtvNSQKUfgzgXcj3jYLlvCKrcBoktjiJ1V8_cwd2yVkpUBGe3/exec";
+  var URL = "https://script.google.com/macros/s/AKfycbxrjXBft9WluhzA9PhujUE51okQOjvm_MNOzF5AoDkwjke-_uXy/exec";
 
   root.send = function(dataSrc, cb) {
     $http(_post(dataSrc)).then(function() {
