@@ -18,11 +18,8 @@ angular.module('copayApp.services').service('configService', function(storageSer
     },
 
     download: {
-      bitpay: {
-        url: 'https://bitpay.com/wallet'
-      },
-      copay: {
-        url: 'https://copay.io/#download'
+      dinero: {
+        url: 'https://github.com/dinerocoin/copay-dinero/releases/latest'
       }
     },
 
