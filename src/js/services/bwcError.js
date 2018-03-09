@@ -1,6 +1,6 @@
 'use strict';
 angular.module('copayApp.services')
-  .factory('bwcError', function bwcErrorService($log, gettextCatalog) {
+  .service('bwcError', function bwcErrorService($log, gettextCatalog) {
     var root = {};
 
     root.msg = function(err, prefix) {

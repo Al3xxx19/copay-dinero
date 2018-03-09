@@ -1,5 +1,5 @@
 'use strict';
-angular.module('copayApp.services').factory('amazonService', function($http, $log, lodash, moment, storageService, configService, platformInfo, nextStepsService, homeIntegrationsService) {
+angular.module('copayApp.services').service('amazonService', function($http, $log, lodash, moment, storageService, configService, platformInfo, nextStepsService, homeIntegrationsService) {
   var root = {};
   var credentials = {};
 
@@ -101,8 +101,7 @@ angular.module('copayApp.services').factory('amazonService', function($http, $lo
       currency: data.currency,
       amount: data.amount,
       clientId: data.uuid,
-      email: data.email,
-      buyerSelectedTransactionCurrency: data.buyerSelectedTransactionCurrency
+      email: data.email
     };
 
     $http(_postBitPay('/amazon-gift/pay', dataSrc)).then(function(data) {
@@ -165,7 +164,7 @@ angular.module('copayApp.services').factory('amazonService', function($http, $lo
       if (giftCards) {
         homeIntegrationsService.register(homeItem);
       } else {
-        nextStepsService.register(nextStepItem);
+        // nextStepsService.register(nextStepItem);
       }
     });
   };

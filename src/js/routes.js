@@ -296,7 +296,7 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
         }
       })
       .state('tabs.send.confirm', {
-        url: '/confirm/:recipientType/:toAddress/:toName/:toAmount/:toEmail/:toColor/:description/:coin/:useSendMax/:requiredFeeRate',
+        url: '/confirm/:recipientType/:toAddress/:toName/:toAmount/:toEmail/:toColor/:description/:coin/:useSendMax',
         views: {
           'tab-send@tabs': {
             controller: 'confirmController',
@@ -908,7 +908,7 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
 
       /*
        *
-       * Buy or Sell Bitcoin
+       * Buy or Sell Dinero
        *
        */
 
@@ -1084,7 +1084,8 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
         params: {
           nextStep: 'tabs.giftcards.mercadoLibre.buy',
           currency: 'BRL',
-          fixedUnit: true
+          coin: 'btc',
+          fixedUnit: 1,
         }
       })
       .state('tabs.giftcards.mercadoLibre.buy', {
@@ -1135,7 +1136,8 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
         params: {
           nextStep: 'tabs.giftcards.amazon.buy',
           currency: 'USD',
-          fixedUnit: true
+          coin: 'btc',
+          fixedUnit: true,
         }
       })
       .state('tabs.giftcards.amazon.buy', {
@@ -1174,11 +1176,13 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
         },
         params: {
           id: null,
+          currency: 'USD',
+          coin: 'btc',
           useSendMax: null
         }
       })
       .state('tabs.bitpayCard.amount', {
-        url: '/amount/:currency/:nextStep',
+        url: '/amount/:nextStep',
         views: {
           'tab-home@tabs': {
             controller: 'amountController',
@@ -1187,7 +1191,7 @@ angular.module('copayApp').config(function(historicLogProvider, $provide, $logPr
         }
       })
       .state('tabs.bitpayCard.topup', {
-        url: '/topup/:amount/:currency',
+        url: '/topup/:amount',
         views: {
           'tab-home@tabs': {
             controller: 'topUpController',

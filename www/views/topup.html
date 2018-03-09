@@ -20,9 +20,9 @@
         </div>
         <div class="amount-label">
           <div class="amount-final">{{amountUnitStr}}</div>
-          <div class="alternative" ng-if="wallet">
+          <div class="alternative" ng-show="amountUnitStr">
             <span ng-if="rate">@
-              {{rate | currency:currencySymbol:2}} {{currencyIsoCode}} per {{wallet.coin.toUpperCase()}}</span>
+              {{rate | currency:currencySymbol:2}} {{currencyIsoCode}} per BTC</span>
             <span ng-if="!rate">...</span>
           </div>
         </div>
@@ -56,13 +56,15 @@
           <div class="item">
             <span translate>Network Cost</span>
             <span class="item-note">
-              <span>{{invoiceFee | currency:currencySymbol:2}} {{currencyIsoCode}}</span>
+              <span ng-if="invoiceFee">{{invoiceFee | currency:currencySymbol:2}} {{currencyIsoCode}}</span>
+              <span ng-if="!invoiceFee">...</span>
             </span>
           </div>
           <div class="item">
             <span translate>Miner Fee</span>
             <span class="item-note">
-              <span>{{networkFee | currency:currencySymbol:2}} {{currencyIsoCode}}</span>
+              <span ng-if="networkFee">{{networkFee | currency:currencySymbol:2}} {{currencyIsoCode}}</span>
+              <span ng-if="!networkFee">...</span>
             </span>
           </div>
           <div class="item">

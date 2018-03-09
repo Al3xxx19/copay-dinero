@@ -1,7 +1,7 @@
 'use strict';
 var logs = [];
 angular.module('copayApp.services')
-  .factory('historicLog', function historicLog(lodash) {
+  .service('historicLog', function historicLog(lodash) {
     var root = {};
 
     var levels = [
@@ -34,8 +34,7 @@ angular.module('copayApp.services')
     };
 
     root.add = function(level, msg) {
-      msg = msg.replace('/xpriv.*/', '[...]');
-      msg = msg.replace('/walletPrivKey.*/', 'walletPrivKey:[...]');
+      msg = msg.replace('/xpriv.*/', 'xpriv[Hidden]');
       logs.push({
         timestamp: new Date().toISOString(),
         level: level,

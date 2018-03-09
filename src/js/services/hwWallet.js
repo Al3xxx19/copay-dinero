@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('copayApp.services')
-  .factory('hwWallet', function($log, bwcService) {
+  .service('hwWallet', function($log, bwcService) {
     var root = {};
 
     // Ledger magic number to get xPub without user confirmation
