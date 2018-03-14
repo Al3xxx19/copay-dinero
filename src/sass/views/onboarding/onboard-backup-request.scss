@@ -1,9 +1,9 @@
 #onboarding-backup-request {
   #warning {
-    padding-top: 15%;
+    padding-top: 4vw;
     display: block;
     flex-direction: column;
-    height: calc(100vh - 320px);
+    height: 50%;
     justify-content: center;
     align-content: center;
   }
@@ -31,9 +31,6 @@
     padding-bottom: 4vw;
   }
   @media (max-height: 568px) {
-    #warning {
-      padding-top: 5%;
-    }
     #backup-description {
       font-size: 14px;
     }
@@ -43,7 +40,7 @@
   }
   @media (max-height: 480px) {
     #warning {
-      padding-top: 5%;
+      padding-top: 0;
     }
     #backup-description {
       font-size: 14px;
