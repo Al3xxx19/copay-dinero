@@ -130,7 +130,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
     try {
       networkName = (new B.Address(data.stateParams.toAddress)).network.name;
     } catch (e) {
-      var message = gettextCatalog.getString('Copay only supports Bitcoin Cash using new version numbers addresses');
+      var message = gettextCatalog.getString('Copay only supports Dinero using new version numbers addresses');
       var backText = gettextCatalog.getString('Go back');
       var learnText = gettextCatalog.getString('Learn more');
       popupService.showConfirm(null, message, backText, learnText, function(back) {
@@ -415,20 +415,20 @@ angular.module('copayApp.controllers').controller('confirmController', function(
       var warningMsg = [];
       if (sendMaxInfo.utxosBelowFee > 0) {
         warningMsg.push(gettextCatalog.getString("A total of {{amountBelowFeeStr}} were excluded. These funds come from UTXOs smaller than the network fee provided.", {
-          amountBelowFeeStr: txFormatService.formatAmountStr(wallet.coin, sendMaxInfo.amountBelowFee)
+          amountBelowFeeStr: txFormatService.formatAmountStr(wallet.coin, sendMaxInfo.amountBelowFee).replace('btc','DIN')
         }));
       }
 
       if (sendMaxInfo.utxosAboveMaxSize > 0) {
         warningMsg.push(gettextCatalog.getString("A total of {{amountAboveMaxSizeStr}} were excluded. The maximum size allowed for a transaction was exceeded.", {
-          amountAboveMaxSizeStr: txFormatService.formatAmountStr(wallet.coin, sendMaxInfo.amountAboveMaxSize)
+          amountAboveMaxSizeStr: txFormatService.formatAmountStr(wallet.coin, sendMaxInfo.amountAboveMaxSize).replace('btc','DIN')
         }));
       }
       return warningMsg.join('\n');
     };
 
-    var msg = gettextCatalog.getString("{{fee}} will be deducted for bitcoin networking fees.", {
-      fee: txFormatService.formatAmountStr(wallet.coin, sendMaxInfo.fee)
+    var msg = gettextCatalog.getString("{{fee}} will be deducted for dinero networking fees.", {
+      fee: txFormatService.formatAmountStr(wallet.coin, sendMaxInfo.fee).replace('btc','DIN')
     });
     var warningMsg = verifyExcludedUtxos();
 
@@ -542,7 +542,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
     if (!tx || !wallet) return;
 
     if ($scope.paymentExpired) {
-      popupService.showAlert(null, gettextCatalog.getString('This bitcoin payment request has expired.'));
+      popupService.showAlert(null, gettextCatalog.getString('This dinero payment request has expired.'));
       $scope.sendStatus = '';
       $timeout(function() {
         $scope.$apply();
@@ -565,7 +565,7 @@ angular.module('copayApp.controllers').controller('confirmController', function(
           return cb();
 
         var message = gettextCatalog.getString('Sending {{amountStr}} from your {{name}} wallet', {
-          amountStr: tx.amountStr,
+          amountStr: tx.amountStr.replace('btc','DIN'),
           name: wallet.name
         });
         var okText = gettextCatalog.getString('Confirm');

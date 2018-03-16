@@ -158,8 +158,8 @@ angular.module('copayApp.services').service('incomingData', function($log, $stat
         // Translate address
         $log.debug('address transalated to:' + addr);
         popupService.showConfirm(
-          gettextCatalog.getString('Bitcoin cash Payment'),
-          gettextCatalog.getString('Payment address was translated to new Bitcoin Cash address format: ' + addr),
+          gettextCatalog.getString('Dinero Payment'),
+          gettextCatalog.getString('Payment address was translated to new Dinero address format: ' + addr),
           gettextCatalog.getString('OK'),
           gettextCatalog.getString('Cancel'),
           function(ret) {

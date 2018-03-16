@@ -30,7 +30,7 @@
             <span ng-if="showRate">
               <span ng-if="!rate">...</span>
               <span ng-if="rate">
-                {{rate| currency:'':2}} {{alternativeIsoCode}} ({{rateDate | amDateFormat:'MM/DD/YYYY HH:mm a'}})
+                {{rateDIN| currency:'':2}} DIN/{{alternativeIsoCode}} - {{rate| currency:'':2}} {{alternativeIsoCode}}/BTC ({{rateDate | amDateFormat:'MM/DD/YYYY HH:mm a'}})
               </span>
             </span>
           </div>

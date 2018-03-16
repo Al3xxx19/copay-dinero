@@ -220,13 +220,27 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
       ts: $scope.btx.time * 1000
     }, function(err, res) {
       if (err) {
-        $log.debug('Could not get historic rate');
+        $log.debug('Could not get historic BTC rate');
         return;
       }
       if (res && res.rate) {
         $scope.rateDate = res.fetchedOn;
         $scope.rate = res.rate;
-      }
+		
+		$http.get('https://www.southxchange.com/api/prices').then(function (response) {
+			var data = response.data;
+			
+			for (var i = 0; i < data.length; i++){
+			  if (data[i].Market == "DIN/BTC"){
+				$scope.rateDIN = parseFloat(data[i].Last) * res.rate;
+			  }
+			}
+		}
+		,function (err) {
+			$log.debug('Could not get historic DIN rate');
+			conosle.log(err);
+		});
+	  }
     });
   };
 
